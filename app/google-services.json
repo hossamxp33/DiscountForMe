@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "119304561773",
+    "firebase_url": "https://discountforme-a306f.firebaseio.com",
+    "project_id": "discountforme-a306f",
+    "storage_bucket": "discountforme-a306f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:119304561773:android:a521a03d50b1b8cf6f4b64",
+        "android_client_info": {
+          "package_name": "com.headshot.discountforme"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "119304561773-nlieh3p1vvop3r46cvdrcqfhgt58bo0g.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBthRkKQG9b-GB3EIq3qBxlUin7SQ4_elQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "119304561773-nlieh3p1vvop3r46cvdrcqfhgt58bo0g.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

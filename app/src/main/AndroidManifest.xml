@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.headshot.discountforme">
+
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.CALL_PHONE" />
@@ -23,7 +24,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".SplashAndIntro.SplashActivity">
+        <activity android:name=".SplashAndIntro.Intro.View.IntroActivity"></activity>
+        <activity android:name=".SplashAndIntro.Splash.View.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

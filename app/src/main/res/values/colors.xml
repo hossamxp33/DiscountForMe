@@ -7,7 +7,8 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="appColor">#FFFFFFFF</color>
-    <color name="backgroundColor">#FFFFFFFF</color>
-    <color name="grey">#AAB5BC</color>
+    <color name="appColor">#f01313</color>
+    <color name="backgroundColor">#F6F7F9</color>
+    <color name="grey">#7b809e</color>
+    <color name="lightGrey">#d1d0d6</color>
 </resources>
