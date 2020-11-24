@@ -1,12 +1,11 @@
-package com.headshot.discountforme.SplashAndIntro;
-
-import androidx.appcompat.app.AppCompatActivity;
+package com.headshot.discountforme.SplashAndIntro.Splash.View;
 
 import android.os.Bundle;
 
 import com.headshot.discountforme.R;
+import com.headshot.discountforme.Utils.ParentClass;
 
-public class SplashActivity extends AppCompatActivity {
+public class SplashActivity extends ParentClass {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

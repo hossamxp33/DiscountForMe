@@ -13,9 +13,14 @@
         android:src="@drawable/vector_earn" />
 
     <TextView
+        android:id="@+id/tvTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/ivHeader"
+        android:textColor="@color/black"
+        android:textSize="18sp"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="20dp" />
+
+
 </RelativeLayout>
