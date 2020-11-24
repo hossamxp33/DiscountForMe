@@ -25,6 +25,7 @@
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
         <activity android:name=".SplashAndIntro.Intro.View.IntroActivity"></activity>
+        <activity android:name=".Main.Activities.HomeActivity"></activity>
         <activity android:name=".SplashAndIntro.Splash.View.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
