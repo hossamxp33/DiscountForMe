@@ -11,4 +11,5 @@
     <color name="backgroundColor">#F3F5F8</color>
     <color name="grey">#7b809e</color>
     <color name="lightGrey">#d1d0d6</color>
+    <color name="transparent">#00000000</color>
 </resources>

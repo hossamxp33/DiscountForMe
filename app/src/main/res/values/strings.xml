@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">DiscountForMe</string>
+    <string name="letUsSave">Let us save with discount for me</string>
+    <string name="next">Next</string>
 </resources>
