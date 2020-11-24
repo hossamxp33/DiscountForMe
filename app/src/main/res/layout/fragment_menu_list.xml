@@ -1,0 +1,36 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="end"
+    android:background="#FFFFFF">
+
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/nav_view"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="end"
+        android:background="#FFFFFF"
+        android:fitsSystemWindows="true"
+
+        >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <include
+                android:id="@+id/header"
+
+                layout="@layout/nav_header" />
+
+            <include
+                android:id="@+id/layout_side_bar_user"
+                layout="@layout/layout_side_bar"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/header" />
+
+        </RelativeLayout>
+    </com.google.android.material.navigation.NavigationView>
+</RelativeLayout>
