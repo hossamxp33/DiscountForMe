@@ -1,7 +1,15 @@
 <resources>
     <string name="app_name">DiscountForMe</string>
+    <string name="search">Search</string>
+    <string name="all">All</string>
     <string name="letUsSave">Let us save with discount for me</string>
     <string name="next">Next</string>
+    <string name="copyCode">Copy code</string>
+    <string name="shopNow">Shop now</string>
+    <string name="thisCouponWasUsed">This coupon was used</string>
+    <string name="time">time</string>
+    <string name="howWasYourExperiment">How was your experiment?</string>
+    <string name="tellUsIfItWorks">Tell us if it works</string>
     <string name="arabic">Arabic</string>
     <string name="english">English</string>
     <string name="pleaseChooseLanguage">Please choose language</string>
@@ -15,4 +23,7 @@
     <string name="newAccount">New account</string>
     <string name="or">OR</string>
     <string name="loginBy">Login by</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="thanks">Thanks!</string>
 </resources>

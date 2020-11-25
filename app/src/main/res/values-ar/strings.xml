@@ -16,4 +16,16 @@
     <string name="newAccount">New account</string>
     <string name="or">Or</string>
     <string name="loginBy">Login by</string>
+    <string name="search">البحث</string>
+    <string name="all">الكل</string>
+    <string name="copyCode">إنسخ الكود</string>
+    <string name="shopNow">تسوق الآن</string>
+    <string name="thisCouponWasUsed">تم إستخدام هذا الكوبون</string>
+    <string name="time">مرة</string>
+    <string name="howWasYourExperiment">كيف كانت تجربتك؟</string>
+    <string name="tellUsIfItWorks">اخبرنا اذا كانت تعمل بشكل جيد</string>
+    <string name="yes">نعم</string>
+    <string name="no">لا</string>
+    <string name="thanks">شكراً!</string>
+
 </resources>
