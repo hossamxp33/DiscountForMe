@@ -2,4 +2,17 @@
     <string name="app_name">DiscountForMe</string>
     <string name="letUsSave">Let us save with discount for me</string>
     <string name="next">Next</string>
+    <string name="arabic">Arabic</string>
+    <string name="english">English</string>
+    <string name="pleaseChooseLanguage">Please choose language</string>
+    <string name="skip">Skip</string>
+    <string name="login">Login</string>
+    <string name="welcomeLogin">Welcome, login in discount for me</string>
+    <string name="emailAddress">Email address</string>
+    <string name="password">password</string>
+    <string name="didYouForgetPassword">Did you forget your password?</string>
+    <string name="haveNoAccount">You have no account?</string>
+    <string name="newAccount">New account</string>
+    <string name="or">OR</string>
+    <string name="loginBy">Login by</string>
 </resources>
