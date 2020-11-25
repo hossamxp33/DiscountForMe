@@ -26,10 +26,31 @@
     <string name="yes">Yes</string>
     <string name="no">No</string>
     <string name="thanks">Thanks!</string>
+    <string name="userName">User name</string>
+    <string name="createAccount">Create account</string>
+    <string name="alreadyHaveAccount">Already have account</string>
+    <string name="forgetPassword">Forget password</string>
+    <string name="enterYourEmailToResetPassword">Enter your email to reset password</string>
+    <string name="verificationCode">Verification code</string>
+    <string name="enterVerificationCode">Enter verification code</string>
+    <string name="enterCodeYouReceived">Enter code you received on mail</string>
+    <string name="ConfirmPassword">Confirm password</string>
+    <string name="changePassword">Change password</string>
+    <string name="enterYourNewPassword">Please enter your new password</string>
     <string name="defineResults">Define results</string>
     <string name="category">Category</string>
     <string name="arrangeBy">Arrange by</string>
     <string name="add">Add</string>
     <string name="deals">Deals</string>
+    <string name="addComplaints">Add complaints</string>
+    <string name="writeYourComplaints">Write your complaints</string>
+    <string name="location">Location</string>
+    <string name="brand">Brand</string>
+    <string name="coupon">Coupon</string>
+    <string name="send">Send</string>
+    <string name="personalProfile">Personal profile</string>
+    <string name="personalSettings">Personal settings</string>
+    <string name="saveChanges">Save changes</string>
+    <string name="currentPassword">Current password</string>
 
 </resources>
