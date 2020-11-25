@@ -32,6 +32,11 @@
     <string name="arrangeBy">الترتيب حسب</string>
     <string name="add">إضافة</string>
     <string name="deals">الصفقات</string>
+    <string name="dealDetails">تفاصيل الصفقة</string>
+    <string name="favourites">المفضلة</string>
+    <string name="notifications">الإشعارات</string>
+    <string name="deleteAll">مسح الكل</string>
+    <string name="usedCoupons">الكوبونات المستعملة</string>
     <string name="userName">الإسم بالكامل</string>
     <string name="createAccount">إنشاء حساب</string>
     <string name="alreadyHaveAccount">لديك حساب بالفعل؟</string>

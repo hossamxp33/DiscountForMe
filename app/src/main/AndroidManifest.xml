@@ -33,10 +33,14 @@
         <activity android:name=".Authentication.ForgetPasswordStepTwo.View.ForgetPasswordStepTwo" />
         <activity android:name=".Authentication.ForgetPasswordStepOne.View.ForgetPasswordStepOneActivity" />
         <activity android:name=".Authentication.Register.View.RegisterActivity" />
-        <activity android:name=".Authentication.Login.View.LoginActivity" />
+        <activity android:name=".Main.Activities.UsedCoupons.View.UsedCouponsActivity"></activity>
+        <activity android:name=".Main.Activities.Notification.View.NotificationsActivity" />
+        <activity android:name=".Main.Activities.Favourites.View.FavouriteActivity" />
+        <activity android:name=".Main.Activities.DealDetails.View.DealDetailsActivity" />
         <activity android:name=".SplashAndIntro.ChooseLanguage.View.ChooseLanguageActivity" />
+
         <activity android:name=".SplashAndIntro.Intro.View.IntroActivity" />
-        <activity android:name=".Main.Activities.View.HomeActivity" />
+        <activity android:name=".Main.Activities.Home.View.HomeActivity" />
         <activity android:name=".SplashAndIntro.Splash.View.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

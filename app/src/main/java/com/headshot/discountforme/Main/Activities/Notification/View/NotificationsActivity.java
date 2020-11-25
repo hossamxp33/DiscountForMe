@@ -1,18 +1,16 @@
-package com.headshot.discountforme.Main.Activities.View;
+package com.headshot.discountforme.Main.Activities.Notification.View;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
 import com.headshot.discountforme.R;
-import com.headshot.discountforme.Utils.ParentClass;
 
-public class HomeActivity extends ParentClass {
-    
+public class NotificationsActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_home);
+        setContentView(R.layout.activity_notifications);
     }
 }

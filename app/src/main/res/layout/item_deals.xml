@@ -1,16 +1,70 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="120dp"
-    android:background="@drawable/draawable_grey_with_black_stroke"
+    android:layout_height="100dp"
     android:layout_marginTop="5dp"
-    android:layout_marginBottom="5dp">
+    android:layout_marginBottom="5dp"
+    android:background="@drawable/draawable_grey_with_black_stroke">
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
+        <com.github.florent37.shapeofview.shapes.CircleView
+            android:id="@+id/rvDeals"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="10dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/white">
+
+                <ImageView
+                    android:id="@+id/ivCategory"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="10dp"
+                    android:scaleType="centerInside"
+                    android:src="@mipmap/facebook" />
+
+            </RelativeLayout>
+
+        </com.github.florent37.shapeofview.shapes.CircleView>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_toEndOf="@+id/rvDeals">
+
+            <TextView
+                android:id="@+id/tvDeal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:maxLines="3"
+                android:text="127689697gk8797hgh799679hjghgghkgyj2137631h3g1h3gkg1h23g123b12m3b1m23bb1n2nbn3b123b1m2b"
+                android:textColor="@color/black"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/tvDealTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:maxLines="3"
+                android:text="hahahahahahaha"
+                android:textColor="@color/greyDarker"
+                android:textSize="13sp"
+                android:textStyle="bold" />
+
+        </RelativeLayout>
+
+
     </RelativeLayout>
-
-
 </RelativeLayout>
