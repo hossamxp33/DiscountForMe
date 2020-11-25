@@ -11,56 +11,51 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <com.github.florent37.shapeofview.shapes.RoundRectView
-            android:id="@+id/rrvLogo"
-            android:layout_width="70dp"
-            android:layout_height="70dp"
-            android:layout_centerVertical="true"
-            android:layout_marginStart="10dp"
-            app:shape_roundRect_bottomLeftRadius="10dp"
-            app:shape_roundRect_bottomRightRadius="10dp"
-            app:shape_roundRect_topLeftRadius="10dp"
-            app:shape_roundRect_topRightRadius="10dp">
-
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
-                <ImageView
-                    android:id="@+id/ivLogo"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:scaleType="fitXY" />
-
-            </RelativeLayout>
-        </com.github.florent37.shapeofview.shapes.RoundRectView>
 
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="70dp"
             android:layout_centerVertical="true"
             android:layout_marginStart="10dp"
-            android:layout_toEndOf="@+id/rrvLogo"
             android:gravity="center_vertical">
 
-            <TextView
-                android:id="@+id/tvHeader"
-                android:layout_width="wrap_content"
+            <RelativeLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textStyle="bold"
-                android:textSize="14sp" />
+                android:layout_centerVertical="true"
+                android:gravity="center_vertical">
 
-            <TextView
-                android:id="@+id/tvName"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/tvHeader"
-                android:layout_marginTop="10dp"
-                android:textColor="@color/black"
-                android:text="Omar Nagah"
-                android:textSize="14sp"
-                android:textStyle="bold" />
+                <TextView
+                    android:id="@+id/tvName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Omar Nagah"
+                    android:textColor="@color/black"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
 
+                <TextView
+                    android:id="@+id/tvEmail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tvName"
+                    android:layout_marginTop="10dp"
+                    android:text="OmarNagah@mail.com"
+                    android:textColor="@color/lightGrey"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+
+            </RelativeLayout>
+
+
+            <ImageView
+                android:id="@+id/ivEdit"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:padding="10dp"
+                android:src="@mipmap/edit" />
         </RelativeLayout>
 
 

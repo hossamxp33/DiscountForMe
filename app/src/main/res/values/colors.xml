@@ -14,6 +14,7 @@
     <color name="lightGrey">#d1d0d6</color>
     <color name="transparent">#00000000</color>
     <color name="lightGrey3">#EDEDF2</color>
+    <color name="viewDarkColor">#788c9c</color>
 
     <color name="greyLighter">#DDDDDD</color>
 </resources>

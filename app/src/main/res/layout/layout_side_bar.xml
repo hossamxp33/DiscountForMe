@@ -34,76 +34,55 @@
                     android:layout_centerVertical="true"
                     android:layout_marginStart="10dp"
                     android:layout_toEndOf="@+id/ivHome"
+                    android:text="@string/home"
                     android:textColor="@color/black"
                     android:textSize="14sp" />
             </RelativeLayout>
 
             <RelativeLayout
-                android:id="@+id/relativeProfile"
+                android:id="@+id/relativeDeals"
                 android:layout_width="match_parent"
                 android:layout_height="50dp">
 
                 <ImageView
-                    android:id="@+id/ivProfile"
+                    android:id="@+id/ivDeals"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
                     android:layout_marginStart="10dp"
-                     />
+                    android:src="@mipmap/deal" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
                     android:layout_marginStart="10dp"
-                    android:layout_toEndOf="@+id/ivProfile"
-
+                    android:layout_toEndOf="@+id/ivDeals"
+                    android:text="@string/deals"
                     android:textColor="@color/black"
                     android:textSize="14sp" />
             </RelativeLayout>
 
             <RelativeLayout
-                android:id="@+id/relativeRequests"
+                android:id="@+id/relativeFavourites"
                 android:layout_width="match_parent"
                 android:layout_height="50dp">
 
                 <ImageView
-                    android:id="@+id/ivRequests"
+                    android:id="@+id/ivFavourites"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
                     android:layout_marginStart="10dp"
-                    />
+                    android:src="@mipmap/favourit" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
                     android:layout_marginStart="10dp"
-                    android:layout_toEndOf="@+id/ivRequests"
-                    android:textColor="@color/black"
-                    android:textSize="14sp" />
-            </RelativeLayout>
-
-            <RelativeLayout
-                android:id="@+id/relativeWallet"
-                android:layout_width="match_parent"
-                android:layout_height="50dp">
-
-                <ImageView
-                    android:id="@+id/ivTransactions"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:layout_marginStart="10dp"
-               />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:layout_marginStart="10dp"
-                    android:layout_toEndOf="@+id/ivTransactions"
+                    android:layout_toEndOf="@+id/ivFavourites"
+                    android:text="@string/favourites"
                     android:textColor="@color/black"
                     android:textSize="14sp" />
             </RelativeLayout>
@@ -114,35 +93,12 @@
                 android:layout_height="50dp">
 
                 <ImageView
-                    android:id="@+id/ivMessages"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:layout_marginStart="10dp"
-                     />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:layout_marginStart="10dp"
-                    android:layout_toEndOf="@+id/ivMessages"
-                    android:textColor="@color/black"
-                    android:textSize="14sp" />
-            </RelativeLayout>
-
-            <RelativeLayout
-                android:id="@+id/relativeMyAddresses"
-                android:layout_width="match_parent"
-                android:layout_height="50dp">
-
-                <ImageView
                     android:id="@+id/ivNotifications"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
                     android:layout_marginStart="10dp"
-                   />
+                    android:src="@mipmap/notification" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -150,95 +106,112 @@
                     android:layout_centerVertical="true"
                     android:layout_marginStart="10dp"
                     android:layout_toEndOf="@+id/ivNotifications"
+                    android:text="@string/notifications"
                     android:textColor="@color/black"
                     android:textSize="14sp" />
             </RelativeLayout>
 
             <RelativeLayout
-                android:id="@+id/relativeAboutUs"
+                android:id="@+id/relativeUsedCoupons"
                 android:layout_width="match_parent"
                 android:layout_height="50dp">
 
                 <ImageView
-                    android:id="@+id/ivAboutUs"
+                    android:id="@+id/ivUsedCoupons"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
                     android:layout_marginStart="10dp"
-                    />
+                    android:src="@mipmap/coupons_1" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
                     android:layout_marginStart="10dp"
-                    android:layout_toEndOf="@+id/ivAboutUs"
+                    android:layout_toEndOf="@+id/ivUsedCoupons"
+                    android:text="@string/usedCoupons"
                     android:textColor="@color/black"
                     android:textSize="14sp" />
             </RelativeLayout>
 
             <RelativeLayout
-                android:id="@+id/relativePrivacyPolicy"
+                android:id="@+id/relativeRateUs"
                 android:layout_width="match_parent"
                 android:layout_height="50dp">
 
                 <ImageView
-                    android:id="@+id/ivPrivacyPolicy"
+                    android:id="@+id/ivRateUs"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
                     android:layout_marginStart="10dp"
-                     />
+                    android:src="@mipmap/rate_us" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
                     android:layout_marginStart="10dp"
-                    android:layout_toEndOf="@+id/ivPrivacyPolicy"
+                    android:layout_toEndOf="@+id/ivRateUs"
+                    android:text="@string/rateUs"
                     android:textColor="@color/black"
                     android:textSize="14sp" />
             </RelativeLayout>
 
             <RelativeLayout
-                android:id="@+id/relativeContactUs"
+                android:id="@+id/relativeSuggestCoupon"
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
-                >
+                android:layout_height="50dp">
 
                 <ImageView
-                    android:id="@+id/ivContactUs"
+                    android:id="@+id/ivSuggestCoupon"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
                     android:layout_marginStart="10dp"
-                     />
+                    android:src="@mipmap/coupons" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
                     android:layout_marginStart="10dp"
-                    android:layout_toEndOf="@+id/ivContactUs"
+                    android:layout_toEndOf="@+id/ivSuggestCoupon"
+                    android:text="@string/suggestCoupon"
                     android:textColor="@color/black"
                     android:textSize="14sp" />
-
-
             </RelativeLayout>
 
-            <View
-                android:id="@+id/view10"
+            <RelativeLayout
+                android:id="@+id/relativeHelp"
                 android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:visibility="gone"
-                 />
+                android:layout_height="50dp">
+
+                <ImageView
+                    android:id="@+id/ivHelp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="10dp"
+                    android:src="@mipmap/help_us" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="10dp"
+                    android:layout_toEndOf="@+id/ivHelp"
+                    android:text="@string/helpUs"
+                    android:textColor="@color/black"
+                    android:textSize="14sp" />
+            </RelativeLayout>
 
 
             <RelativeLayout
                 android:id="@+id/relativeLogout"
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:layout_marginTop="30dp">
+                android:layout_height="50dp">
 
                 <ImageView
                     android:id="@+id/ivLogout"
@@ -254,9 +227,92 @@
                     android:layout_centerVertical="true"
                     android:layout_marginStart="10dp"
                     android:layout_toEndOf="@+id/ivLogout"
+                    android:text="@string/logout"
                     android:textColor="@color/black"
                     android:textSize="14sp" />
             </RelativeLayout>
+
+            <View
+                android:id="@+id/view10"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/backgroundColor" />
+
+
+            <RelativeLayout
+                android:id="@+id/relativeChooseLanguage"
+                android:layout_width="match_parent"
+                android:layout_height="50dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="10dp"
+                    android:text="@string/chooseLanguage"
+                    android:textColor="@color/black"
+                    android:textSize="14sp" />
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="180dp"
+                android:layout_height="35dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginBottom="10dp"
+                android:weightSum="1">
+
+
+                <RelativeLayout
+                    android:id="@+id/relativeEnglish"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_weight=".48"
+                    android:background="@drawable/drable_app_color_5_radious"
+                    android:gravity="center">
+
+
+                    <TextView
+                        android:id="@+id/tvEnglish"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_centerVertical="true"
+                        android:text="@string/english"
+                        android:textColor="@color/white"
+                        android:textSize="14sp" />
+
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight=".04" />
+
+                <RelativeLayout
+                    android:id="@+id/rlArabic"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_weight=".48"
+                    android:gravity="center">
+
+
+                    <TextView
+                        android:id="@+id/tvArabic"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_centerVertical="true"
+                        android:text="@string/arabic"
+                        android:textColor="@color/black"
+                        android:textSize="14sp" />
+
+                </RelativeLayout>
+
+
+            </LinearLayout>
 
 
         </LinearLayout>
