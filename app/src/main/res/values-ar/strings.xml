@@ -27,5 +27,10 @@
     <string name="yes">نعم</string>
     <string name="no">لا</string>
     <string name="thanks">شكراً!</string>
+    <string name="defineResults">تحديد النتائج</string>
+    <string name="category">الفئة</string>
+    <string name="arrangeBy">الترتيب حسب</string>
+    <string name="add">إضافة</string>
+    <string name="deals">الصفقات</string>
 
 </resources>
