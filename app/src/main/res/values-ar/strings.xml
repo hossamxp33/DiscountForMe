@@ -58,9 +58,10 @@
     <string name="personalSettings">الإعدادات الشخصية</string>
     <string name="saveChanges">حفظ التعديلات</string>
     <string name="currentPassword">كلمة المرور الحالية</string>
+    <string name="suggestCoupon">اقترح كود كوبون</string>
+    <string name="whatsAppNumber">رقم الواتساب</string>
     <string name="home">الرئيسية</string>
     <string name="rateUs">قيمنا</string>
-    <string name="suggestCoupon">إقترح كود كوبون</string>
     <string name="helpUs">المساعدة</string>
     <string name="logout">تسجيل الخروج</string>
     <string name="chooseLanguage">إختر اللغة</string>
