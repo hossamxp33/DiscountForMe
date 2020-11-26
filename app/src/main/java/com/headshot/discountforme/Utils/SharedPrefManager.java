@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 
+import com.headshot.discountforme.Model.UserModel.Data;
 
 
 /**
@@ -130,22 +131,17 @@ public class SharedPrefManager {
      *
      * @return user model
      */
-//    public Data getUserDate() {
-//        Data userModel = new Data();
-//        SharedPreferences sharedPreferences = mContext.getSharedPreferences(SHARED_PREF_NAME,0);
-//        userModel.setId(sharedPreferences.getInt("id",0));
-//        userModel.setName(sharedPreferences.getString("name",""));
-//        userModel.setMobile(sharedPreferences.getString("mobile",""));
-//        userModel.setEmail(sharedPreferences.getString("email",""));
-//        userModel.setImage(sharedPreferences.getString("image",""));
-//        userModel.setPersonalCode(sharedPreferences.getString("personal_code",""));
-//        userModel.setWallet(sharedPreferences.getString("wallet",""));
-//        userModel.setType(sharedPreferences.getString("type",""));
-//        userModel.setToken(sharedPreferences.getString("token",""));
-//        userModel.setStatus(sharedPreferences.getString("status",""));
-//        userModel.setConfirmCode(sharedPreferences.getString("confirm_code",""));
-//        return userModel;
-//    }
+    public Data getUserDate() {
+        Data userModel = new Data();
+        SharedPreferences sharedPreferences = mContext.getSharedPreferences(SHARED_PREF_NAME,0);
+        userModel.setId(sharedPreferences.getInt("id",0));
+        userModel.setName(sharedPreferences.getString("name",""));
+        userModel.setEmail(sharedPreferences.getString("email",""));
+        userModel.setSocialToken(sharedPreferences.getString("social_token",""));
+        userModel.setToken(sharedPreferences.getString("token",""));
+        userModel.setCode(sharedPreferences.getString("code",""));
+        return userModel;
+    }
 
 
     /**
@@ -153,22 +149,17 @@ public class SharedPrefManager {
      *
      * @param user is the model which hold all user data
      */
-//    public void setUserDate(Data user) {
-//        SharedPreferences sharedPreferences = mContext.getSharedPreferences(SHARED_PREF_NAME,0);
-//        SharedPreferences.Editor editor = sharedPreferences.edit();
-//        editor.putInt("id",user.getId());
-//        editor.putString("name",user.getName());
-//        editor.putString("mobile",user.getMobile());
-//        editor.putString("email",user.getEmail());
-//        editor.putString("image",user.getImage());
-//        editor.putString("personal_code",user.getPersonalCode());
-//        editor.putString("wallet",user.getWallet());
-//        editor.putString("type",user.getType());
-//        editor.putString("token",user.getToken());
-//        editor.putString("status",user.getStatus());
-//        editor.putString("confirm_code",user.getConfirmCode());
-//        editor.apply();
-//    }
+    public void setUserDate(Data user) {
+        SharedPreferences sharedPreferences = mContext.getSharedPreferences(SHARED_PREF_NAME,0);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putInt("id",user.getId());
+        editor.putString("name",user.getName());
+        editor.putString("email",user.getEmail());
+        editor.putString("social_token",user.getSocialToken());
+        editor.putString("token",user.getToken());
+        editor.putString("code",user.getCode());
+        editor.apply();
+    }
 
 
     public void setSingleId(String singleId) {

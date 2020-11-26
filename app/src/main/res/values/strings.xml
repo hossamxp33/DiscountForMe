@@ -1,5 +1,8 @@
 <resources>
     <string name="app_name">DiscountForMe</string>
+    <string name="note">Notes</string>
+    <string name="ok">OK</string>
+    <string name="need_permissions">You should allow the app to use these permissions to work well</string>
     <string name="search">Search</string>
     <string name="all">All</string>
     <string name="letUsSave">Let us save with discount for me</string>

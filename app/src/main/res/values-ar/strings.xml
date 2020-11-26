@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">DiscountForMe</string>
+    <string name="app_name">اخصم لي</string>
+    <string name="note">ملاحظات</string>
+    <string name="ok">حسناً</string>
+    <string name="need_permissions">يجب ان تسمح للتطبيق بإستخدام الصلاحيات ليعمل جيداً</string>
     <string name="letUsSave">يلا نوفر مع اخصم لي</string>
     <string name="next">التالي</string>
     <string name="arabic">العربية</string>
