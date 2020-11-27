@@ -12,6 +12,9 @@ public class Datum {
     @SerializedName("name")
     @Expose
     private String name;
+    @SerializedName("image")
+    @Expose
+    private String image;
 
     public int getId() {
         return id;
@@ -39,4 +42,11 @@ public class Datum {
         return this;
     }
 
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
+    }
 }

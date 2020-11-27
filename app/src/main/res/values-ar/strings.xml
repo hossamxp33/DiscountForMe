@@ -68,6 +68,9 @@
     <string name="helpUs">المساعدة</string>
     <string name="logout">تسجيل الخروج</string>
     <string name="chooseLanguage">إختر اللغة</string>
-    <string name="somethingWentWrong">Somthing went wrong</string>
+    <string name="somethingWentWrong">حدث خطأ ما</string>
+    <string name="lastUsageWas">آخر إستخدام</string>
+    <string name="copiedSuccessfully">تم النسخ!</string>
+
 
 </resources>

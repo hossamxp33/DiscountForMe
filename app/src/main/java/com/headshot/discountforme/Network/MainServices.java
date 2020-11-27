@@ -1,17 +1,22 @@
 package com.headshot.discountforme.Network;
 
 import com.headshot.discountforme.Model.CategoriesModel.CategoriesModel;
+import com.headshot.discountforme.Model.GeneralResponse.GeneralResponse;
+import com.headshot.discountforme.Model.HomeModel.HomeModel;
 import com.headshot.discountforme.Model.UserModel.UserModel;
 
 import io.reactivex.Observable;
 import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
+import retrofit2.http.Header;
 import retrofit2.http.POST;
+import retrofit2.http.Path;
+import retrofit2.http.Query;
 
 public interface MainServices {
-    @GET(MainUrl.categories)
-    Observable<CategoriesModel> categories(
+    @GET(MainUrl.brands)
+    Observable<CategoriesModel> brands(
     );
 
     @FormUrlEncoded
@@ -36,4 +41,22 @@ public interface MainServices {
             @Field("social_token") String social_token
     );
 
+    @GET(MainUrl.home)
+    Observable<HomeModel> home(
+            @Header("Authorization") String Authorization,
+            @Path("id") String id,
+            @Query("page") int page
+    );
+
+    @GET(MainUrl.use_coupon)
+    Observable<GeneralResponse> use_coupon(
+            @Header("Authorization") String Authorization,
+            @Path("id") String id);
+
+    @FormUrlEncoded
+    @POST(MainUrl.coupon_review)
+    Observable<GeneralResponse> coupon_review(
+            @Header("Authorization") String Authorization,
+            @Field("coupon_id") String coupon_id,
+            @Field("status") String status);
 }

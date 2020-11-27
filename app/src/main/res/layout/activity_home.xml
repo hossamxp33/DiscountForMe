@@ -47,10 +47,11 @@
                 android:layout_height="match_parent"
                 android:layout_toEndOf="@+id/ivSearch"
                 android:background="@null"
-                android:gravity="center_vertical"
+                android:gravity="end|center_vertical"
                 android:hint="@string/search"
                 android:textColor="@color/black"
                 android:textColorHint="@color/grey"
+                android:textDirection="rtl"
                 android:textSize="14sp" />
         </RelativeLayout>
 

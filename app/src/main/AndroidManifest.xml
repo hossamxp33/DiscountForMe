@@ -40,7 +40,9 @@
         <activity android:name=".Main.Activities.DealDetails.View.DealDetailsActivity" />
         <activity android:name=".SplashAndIntro.ChooseLanguage.View.ChooseLanguageActivity" />
         <activity android:name=".SplashAndIntro.Intro.View.IntroActivity" />
-        <activity android:name=".Main.Activities.Home.View.HomeActivity" />
+        <activity android:name=".Main.Activities.Home.View.HomeActivity"
+            android:screenOrientation="portrait"
+            />
         <activity android:name=".SplashAndIntro.Splash.View.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

@@ -10,6 +10,7 @@
     <string name="copyCode">Copy code</string>
     <string name="shopNow">Shop now</string>
     <string name="thisCouponWasUsed">This coupon was used</string>
+    <string name="lastUsageWas">Last usage</string>
     <string name="time">time</string>
     <string name="howWasYourExperiment">How was your experiment?</string>
     <string name="tellUsIfItWorks">Tell us if it works</string>
@@ -68,5 +69,6 @@
     <string name="logout">Logout</string>
     <string name="chooseLanguage">Choose language</string>
     <string name="somethingWentWrong">Somthing went wrong</string>
+    <string name="copiedSuccessfully">Copied successfully!</string>
 
 </resources>
