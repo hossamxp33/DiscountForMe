@@ -67,5 +67,6 @@
     <string name="helpUs">Help us</string>
     <string name="logout">Logout</string>
     <string name="chooseLanguage">Choose language</string>
+    <string name="somethingWentWrong">Somthing went wrong</string>
 
 </resources>
