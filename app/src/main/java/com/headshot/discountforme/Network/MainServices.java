@@ -5,9 +5,11 @@ import com.headshot.discountforme.Model.FavouritesModel.FavouritesModel;
 import com.headshot.discountforme.Model.GeneralResponse.GeneralResponse;
 import com.headshot.discountforme.Model.HomeModel.HomeModel;
 import com.headshot.discountforme.Model.SliderModel.SliderModel;
+import com.headshot.discountforme.Model.NotificationModel.NotificationModel;
 import com.headshot.discountforme.Model.UserModel.UserModel;
 
 import io.reactivex.Observable;
+import retrofit2.http.DELETE;
 import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
@@ -171,5 +173,16 @@ public interface MainServices {
     Observable<GeneralResponse> favourite_coupon(
             @Header("Authorization") String Authorization,
             @Field("coupon_id") String coupon_id
+    );
+
+    @GET(MainUrl.notifications)
+    Observable<NotificationModel> notifications(
+            @Header("Authorization") String Authorization,
+            @Query("page") int page
+    );
+
+    @DELETE(MainUrl.delete_all_notifications)
+    Observable<NotificationModel> delete_all_notifications(
+            @Header("Authorization") String Authorization
     );
 }

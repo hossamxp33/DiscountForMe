@@ -16,15 +16,15 @@
         android:name=".AppController"
         android:allowBackup="true"
         android:hardwareAccelerated="false"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/logo"
         android:label="@string/app_name"
         android:largeHeap="true"
         android:requestLegacyExternalStorage="true"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@drawable/logo"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".Main.Activities.FilterAndSearch.View.FilterAndSearchActivity"></activity>
+        <activity android:name=".Main.Activities.FilterAndSearch.View.FilterAndSearchActivity" />
         <activity android:name=".Main.Activities.SuggestCoupon.View.SuggestCouponActivity" />
         <activity android:name=".Main.Activities.ChangePassword.View.ChangePasswordActivity" />
         <activity android:name=".Main.Activities.Profile.View.ProfileActivity" />
@@ -51,6 +51,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <service android:name=".Utils.MyFcmPushReceiver">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+
     </application>
 
 </manifest>

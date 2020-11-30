@@ -22,8 +22,8 @@ import androidx.lifecycle.LifecycleOwner;
 import com.google.firebase.iid.FirebaseInstanceId;
 import com.google.firebase.messaging.FirebaseMessagingService;
 import com.google.firebase.messaging.RemoteMessage;
+import com.headshot.discountforme.Main.Activities.Home.View.HomeActivity;
 import com.headshot.discountforme.R;
-
 
 import org.json.JSONObject;
 
@@ -51,10 +51,10 @@ public class MyFcmPushReceiver extends FirebaseMessagingService implements Lifec
     public void onNewToken(String s) {
         super.onNewToken(s);
         String refreshedToken = FirebaseInstanceId.getInstance().getToken();
-        Log.e(TAG, "Refreshed token: " + refreshedToken);
-        SharedPreferences sharedPreferences = getSharedPreferences(Constants.mobileToken, MODE_PRIVATE);
+        Log.e(TAG,"Refreshed token: " + refreshedToken);
+        SharedPreferences sharedPreferences = getSharedPreferences(Constants.mobileToken,MODE_PRIVATE);
         SharedPreferences.Editor edit = sharedPreferences.edit();
-        edit.putString("m_token", refreshedToken);
+        edit.putString("m_token",refreshedToken);
         edit.apply();
         // If you want to send messages to this application instance or
         // manage this apps subscriptions on the server side, send the
@@ -69,7 +69,7 @@ public class MyFcmPushReceiver extends FirebaseMessagingService implements Lifec
 
     @Override
     public void onMessageReceived(RemoteMessage remoteMessage) {
-        Log.i("mnmaa", "smsmsms,ms");
+        Log.i("mnmaa","smsmsms,ms");
         // TODO(developer): Handle FCM messages here
         showNotification(remoteMessage.getData());
     }
@@ -78,42 +78,37 @@ public class MyFcmPushReceiver extends FirebaseMessagingService implements Lifec
     private void showNotification(Map<String, String> notificationr) {
         sharedPrefManager = new SharedPrefManager(getApplicationContext());
 
-        Log.e("pushpush", notificationr.toString());
+        Log.e("pushpush",notificationr.toString());
 
 
-//        try {
-//            JSONObject jo = new JSONObject(notificationr);
-//            if (sharedPrefManager.getUserDate().getType().equals("client")) {
-//                Intent notificationIntent;
-//                notificationIntent = new Intent(getApplicationContext(), HomeActivity.class);
-//                notificationIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-//                pushOrderNotification(notificationIntent, jo.getString("title"), jo.getString("body"));
-//            } else {
-//                Intent notificationIntent;
-//                notificationIntent = new Intent(getApplicationContext(), HomeDriverActivity.class);
-//                notificationIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-//                pushOrderNotification(notificationIntent, jo.getString("title"), jo.getString("body"));
-//            }
-//            Log.e("jo", jo.toString());
-//
-//        } catch (Exception e) {
-//            Log.e("pushpushexception", e.toString());
-//            e.printStackTrace();
-//        }
+        try {
+            JSONObject jo = new JSONObject(notificationr);
+
+            Intent notificationIntent;
+            notificationIntent = new Intent(getApplicationContext(),HomeActivity.class);
+            notificationIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            pushOrderNotification(notificationIntent,jo.getString("title"),jo.getString("body"));
+
+            Log.e("jo",jo.toString());
+
+        } catch (Exception e) {
+            Log.e("pushpushexception",e.toString());
+            e.printStackTrace();
+        }
 
 
     }
 
-    private void pushOrderNotification(Intent notificationIntent, String title, String body) {
+    private void pushOrderNotification(Intent notificationIntent,String title,String body) {
 
         Uri defaultSoundUri = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
 
 
-        PendingIntent contentIntent = PendingIntent.getActivity(getApplicationContext(), 0, notificationIntent,
+        PendingIntent contentIntent = PendingIntent.getActivity(getApplicationContext(),0,notificationIntent,
                 PendingIntent.FLAG_UPDATE_CURRENT);
         NotificationCompat.Builder notificationBuilder = null;
 
-        Bitmap bitmap1 = BitmapFactory.decodeResource(getResources(), R.drawable.logo);
+        Bitmap bitmap1 = BitmapFactory.decodeResource(getResources(),R.drawable.logo);
         NotificationManager notificationManager = (NotificationManager) getApplicationContext()
                 .getSystemService(Context.NOTIFICATION_SERVICE);
 
@@ -139,11 +134,11 @@ public class MyFcmPushReceiver extends FirebaseMessagingService implements Lifec
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             int importance = NotificationManager.IMPORTANCE_HIGH;
             NotificationChannel notificationChannel;
-            notificationChannel = new NotificationChannel(NOTIFICATION_CHANNEL_ID, "NOTIFICATION_CHANNEL_NAME", importance);
+            notificationChannel = new NotificationChannel(NOTIFICATION_CHANNEL_ID,"NOTIFICATION_CHANNEL_NAME",importance);
             notificationChannel.enableLights(true);
             notificationChannel.setLightColor(Color.RED);
             notificationChannel.enableVibration(true);
-            notificationChannel.setVibrationPattern(new long[]{100, 200, 300, 400, 500, 400, 300, 200, 400});
+            notificationChannel.setVibrationPattern(new long[]{100,200,300,400,500,400,300,200,400});
             assert notificationManager != null;
             notificationBuilder.setContentTitle(title);
             notificationBuilder.setContentText(body);
@@ -155,7 +150,7 @@ public class MyFcmPushReceiver extends FirebaseMessagingService implements Lifec
         }
         Random random = new Random();
         int notificationID = random.nextInt(9999 - 1000) + 1000;
-        notificationManager.notify(notificationID, notificationBuilder.build());
+        notificationManager.notify(notificationID,notificationBuilder.build());
 
     }
 

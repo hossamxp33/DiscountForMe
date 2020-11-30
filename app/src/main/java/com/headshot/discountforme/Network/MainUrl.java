@@ -22,4 +22,6 @@ public class MainUrl {
     public static final String suggest_coupon = "suggest_coupon";
     public static final String send_help = "send_help";
     public static final String logout = "logout";
+    public static final String notifications = "notifications";
+    public static final String delete_all_notifications = "delete_all_notifications";
 }
