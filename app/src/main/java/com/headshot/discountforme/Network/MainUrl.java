@@ -12,4 +12,11 @@ public class MainUrl {
     public static final String search = "search";
     public static final String home = "home/{id}";
     public static final String use_coupon = "use_coupon/{id}";
+    public static final String forget_password = "forget_password";
+    public static final String check_forget_code = "check_forget_code";
+    public static final String change_password = "change_password";
+    public static final String update_profile = "update_profile";
+    public static final String suggest_coupon = "suggest_coupon";
+    public static final String send_help = "send_help";
+    public static final String logout = "logout";
 }

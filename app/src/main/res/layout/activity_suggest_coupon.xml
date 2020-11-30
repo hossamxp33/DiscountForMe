@@ -23,7 +23,7 @@
             android:textStyle="bold" />
 
         <ImageView
-            android:id="@+id/tvSkip"
+            android:id="@+id/ivBack"
             android:layout_width="45dp"
             android:layout_height="45dp"
             android:layout_centerVertical="true"
@@ -167,12 +167,37 @@
                     android:textSize="14sp" />
             </com.google.android.material.textfield.TextInputLayout>
 
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tilBrand"
+                style="@style/My.TextInputLayout.FilledBox.Dense"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="15dp"
+                android:hint="@string/brand"
+                android:textColorHint="@color/grey">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etBrand"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/transparent"
+                    android:gravity="end|center_vertical"
+                    android:inputType="text"
+                    android:textColor="@color/black"
+                    android:textDirection="rtl"
+                    android:textSize="14sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_marginStart="15dp"
                 android:layout_marginTop="20dp"
-                android:layout_marginEnd="15dp">
+                android:layout_marginEnd="15dp"
+                android:visibility="gone">
 
                 <Spinner
                     android:id="@+id/spinnerBrand"
@@ -183,7 +208,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
                     android:layout_alignParentBottom="true"
-                    android:background="@color/grey"/>
+                    android:background="@color/grey" />
 
             </RelativeLayout>
 

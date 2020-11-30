@@ -87,7 +87,66 @@ public interface MainServices {
     Observable<GeneralResponse> coupon_review(
             @Header("Authorization") String Authorization,
             @Field("coupon_id") String coupon_id,
-            @Field("status") String status);
+            @Field("status") String status
+    );
+
+    @FormUrlEncoded
+    @POST(MainUrl.forget_password)
+    Observable<UserModel> forgetPassword(
+            @Field("email") String email
+    );
+
+    @FormUrlEncoded
+    @POST(MainUrl.check_forget_code)
+    Observable<UserModel> checkCode(
+            @Field("email") String email,
+            @Field("code") String code
+    );
+
+    @FormUrlEncoded
+    @POST(MainUrl.change_password)
+    Observable<UserModel> changePassword(
+            @Field("email") String email,
+            @Field("password") String password,
+            @Field("device_token") String device_token,
+            @Field("device_type") String device_type
+    );
+
+    @FormUrlEncoded
+    @POST(MainUrl.update_profile)
+    Observable<UserModel> update_profile(
+            @Header("Authorization") String Authorization,
+            @Field("name") String name,
+            @Field("email") String email
+    );
+
+    @FormUrlEncoded
+    @POST(MainUrl.suggest_coupon)
+    Observable<GeneralResponse> suggestCoupon(
+            @Field("full_name") String full_name,
+            @Field("address") String address,
+            @Field("email") String email,
+            @Field("whatsapp") String whatsapp,
+            @Field("coupon_code") String coupon_code,
+            @Field("brand") String brand
+    );
+
+    @FormUrlEncoded
+    @POST(MainUrl.send_help)
+    Observable<GeneralResponse> sendHelp(
+            @Field("brand") String brand,
+            @Field("email") String email,
+            @Field("address") String address,
+            @Field("message") String message,
+            @Field("coupon") String coupon
+    );
+
+    @FormUrlEncoded
+    @POST(MainUrl.logout)
+    Observable<GeneralResponse> logout(
+            @Header("Authorization") String Authorization,
+            @Field("device_token") String device_token
+    );
 
     @FormUrlEncoded
     @POST(MainUrl.favourite_coupon)

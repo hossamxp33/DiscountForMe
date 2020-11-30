@@ -1,7 +1,8 @@
-package com.headshot.discountforme.Authentication.Register.Repository;
+package com.headshot.discountforme.Authentication.ForgetPasswordStepThree.Repository;
 
 import androidx.lifecycle.MutableLiveData;
 
+import com.headshot.discountforme.Authentication.Login.Repository.LoginRepository;
 import com.headshot.discountforme.Model.UserModel.UserModel;
 import com.headshot.discountforme.Network.MainServices;
 import com.headshot.discountforme.Utils.RetroWeb;
@@ -12,23 +13,22 @@ import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.Disposable;
 import io.reactivex.schedulers.Schedulers;
 
-public class RegisterRepository {
+public class ForgetPasswordStepThreeRepository {
 
-    private static RegisterRepository registerRepository;
+    private static ForgetPasswordStepThreeRepository forgetPasswordStepThreeRepository;
 
-    public static RegisterRepository getInstance() {
-        if (registerRepository == null) {
-            registerRepository = new RegisterRepository();
+    public static ForgetPasswordStepThreeRepository getInstance() {
+        if (forgetPasswordStepThreeRepository == null) {
+            forgetPasswordStepThreeRepository = new ForgetPasswordStepThreeRepository();
         }
-        return registerRepository;
+        return forgetPasswordStepThreeRepository;
     }
 
-    public MutableLiveData<UserModel> register(String name,String email,String password,String confirmPassword,String deviceToken,String socialToken) {
+    public MutableLiveData<UserModel> changePassword(String email,String password,String deviceToken) {
         final MutableLiveData<UserModel> mutableLiveData = new MutableLiveData<>();
 
 
-        Observable observable = RetroWeb.getClient().create(MainServices.class).register(name,email,deviceToken,"android",
-                password,confirmPassword,socialToken)
+        Observable observable = RetroWeb.getClient().create(MainServices.class).changePassword(email,password,deviceToken,"android")
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread());
         Observer<UserModel> observer = new Observer<UserModel>() {
@@ -57,4 +57,5 @@ public class RegisterRepository {
 
         return mutableLiveData;
     }
+
 }

@@ -15,6 +15,9 @@ public class UserModel {
     @SerializedName("code")
     @Expose
     private int code;
+    @SerializedName("msg")
+    @Expose
+    private String msg;
 
     public boolean isValue() {
         return value;
@@ -40,4 +43,11 @@ public class UserModel {
         this.code = code;
     }
 
+    public String getMsg() {
+        return msg;
+    }
+
+    public void setMsg(String msg) {
+        this.msg = msg;
+    }
 }

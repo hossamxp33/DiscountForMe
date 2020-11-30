@@ -23,7 +23,7 @@
             android:textStyle="bold" />
 
         <ImageView
-            android:id="@+id/tvSkip"
+            android:id="@+id/ivBack"
             android:layout_width="45dp"
             android:layout_height="45dp"
             android:layout_centerVertical="true"

@@ -11,6 +11,7 @@ import android.view.View;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
+import com.headshot.discountforme.Authentication.ForgetPasswordStepOne.View.ForgetPasswordStepOneActivity;
 import com.headshot.discountforme.Authentication.Login.ViewModel.LoginViewModel;
 import com.headshot.discountforme.Authentication.Register.View.RegisterActivity;
 import com.headshot.discountforme.Main.Activities.Home.View.HomeActivity;
@@ -82,6 +83,11 @@ public class LoginActivity extends ParentClass {
 
         binding.rlSignUp.setOnClickListener(v -> {
             Intent intent = new Intent(LoginActivity.this,RegisterActivity.class);
+            startActivity(intent);
+            Bungee.split(LoginActivity.this);
+        });
+        binding.tvForgetPassword.setOnClickListener(v -> {
+            Intent intent = new Intent(LoginActivity.this,ForgetPasswordStepOneActivity.class);
             startActivity(intent);
             Bungee.split(LoginActivity.this);
         });

@@ -75,6 +75,7 @@
     <string name="A_Z">أ-ي</string>
     <string name="Z_A">ي-أ</string>
     <string name="results">النتائج</string>
+    <string name="profileUpdatedSuccessfully">تم تحديث البيانات الشخصية بنجاح</string>
 
 
 </resources>

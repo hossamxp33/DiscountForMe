@@ -8,17 +8,26 @@ import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.RelativeLayout;
 
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import com.google.android.material.navigation.NavigationView;
+import com.headshot.discountforme.Authentication.Login.View.LoginActivity;
+import com.headshot.discountforme.Main.Activities.Complaints.View.ComplaintsActivity;
+import com.headshot.discountforme.Main.Activities.Deals.View.DealsActivity;
+import com.headshot.discountforme.Main.Activities.Favourites.View.FavouriteActivity;
+import com.headshot.discountforme.Main.Activities.Home.View.HomeActivity;
+import com.headshot.discountforme.Main.Activities.Notification.View.NotificationsActivity;
+import com.headshot.discountforme.Main.Activities.Profile.View.ProfileActivity;
+import com.headshot.discountforme.Main.Activities.SuggestCoupon.View.SuggestCouponActivity;
+import com.headshot.discountforme.Main.Activities.UsedCoupons.View.UsedCouponsActivity;
 import com.headshot.discountforme.R;
+import com.headshot.discountforme.Utils.Constants;
 import com.headshot.discountforme.Utils.MenuListFragment.Presenter.MenuListFragmentPresenter;
+import com.headshot.discountforme.Utils.ParentClass;
 import com.headshot.discountforme.Utils.SharedPrefManager;
 import com.headshot.discountforme.databinding.FragmentMenuListBinding;
-
 
 import spencerstudios.com.bungeelib.Bungee;
 
@@ -32,12 +41,8 @@ import static android.content.Context.MODE_PRIVATE;
 public class MenuListFragment extends Fragment {
     private FragmentMenuListBinding binding;
     SharedPrefManager sharedPrefManager;
-
-    RelativeLayout relativeOffers;
     String deviceToken = "tokenToBeChanged";
-
     MenuListFragmentPresenter menuListFragmentPresenter;
-
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -46,9 +51,9 @@ public class MenuListFragment extends Fragment {
 
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater,ViewGroup container,Bundle savedInstanceState) {
 
-        binding = FragmentMenuListBinding.inflate(inflater, container, false);
+        binding = FragmentMenuListBinding.inflate(inflater,container,false);
         View view = binding.getRoot();
         initUi();
 
@@ -65,105 +70,89 @@ public class MenuListFragment extends Fragment {
     }
 
     private void handelClicks() {
-//        binding.layoutSideBarUser.relativeHome.setOnClickListener(v -> {
-//            if (sharedPrefManager.getUserDate().getType().equals("client")) {
-//                Intent intent = new Intent(getActivity(), HomeActivity.class);
-//                startActivity(intent);
-//                Bungee.split(getActivity());
-//
-//            } else {
-//                Intent intent = new Intent(getActivity(), HomeDriverActivity.class);
-//                startActivity(intent);
-//                Bungee.split(getActivity());
-//
-//            }
-//
-//        });
-//        binding.layoutSideBarUser.relativeProfile.setOnClickListener(v -> {
-//            Intent intent = new Intent(getActivity(), ProfileUserActivity.class);
+        binding.layoutSideBarUser.relativeHome.setOnClickListener(v -> {
+            Intent intent = new Intent(getActivity(),HomeActivity.class);
+            startActivity(intent);
+            Bungee.split(getActivity());
+
+        });
+        binding.header.relativeMenuHeader.setOnClickListener(v -> {
+            Intent intent = new Intent(getActivity(),ProfileActivity.class);
+            startActivity(intent);
+            Bungee.split(getActivity());
+        });
+
+        binding.layoutSideBarUser.relativeDeals.setOnClickListener(v -> {
+            Intent intent = new Intent(getActivity(),DealsActivity.class);
+            startActivity(intent);
+            Bungee.split(getActivity());
+        });
+
+        binding.layoutSideBarUser.relativeFavourites.setOnClickListener(v -> {
+            Intent intent = new Intent(getActivity(),FavouriteActivity.class);
+            startActivity(intent);
+            Bungee.split(getActivity());
+        });
+
+        binding.layoutSideBarUser.relativeNotifications.setOnClickListener(v -> {
+            Intent intent = new Intent(getActivity(),NotificationsActivity.class);
+            startActivity(intent);
+            Bungee.split(getActivity());
+        });
+
+        binding.layoutSideBarUser.relativeUsedCoupons.setOnClickListener(v -> {
+            Intent intent = new Intent(getActivity(),UsedCouponsActivity.class);
+            startActivity(intent);
+            Bungee.split(getActivity());
+        });
+
+//        binding.layoutSideBarUser.relativeRateUs.setOnClickListener(v -> {
+//            Intent intent = new Intent(getActivity(),.class);
 //            startActivity(intent);
 //            Bungee.split(getActivity());
 //        });
-//
-//        binding.layoutSideBarUser.relativeRequests.setOnClickListener(v -> {
-//            if (sharedPrefManager.getUserDate().getType().equals("client")) {
-//                Intent intent = new Intent(getActivity(), MyOrdersActivity.class);
-//                startActivity(intent);
-//                Bungee.split(getActivity());
-//
-//            } else {
-//                Intent intent = new Intent(getActivity(), DriverOrdersActivity.class);
-//                startActivity(intent);
-//                Bungee.split(getActivity());
-//
-//            }
-//        });
-//
-//        binding.layoutSideBarUser.relativeWallet.setOnClickListener(v -> {
-//            Intent intent = new Intent(getActivity(), WalletActivity.class);
-//            startActivity(intent);
-//            Bungee.split(getActivity());
-//        });
-//
-//        binding.layoutSideBarUser.relativeNotifications.setOnClickListener(v -> {
-//            Intent intent = new Intent(getActivity(), NotificationsActivity.class);
-//            startActivity(intent);
-//            Bungee.split(getActivity());
-//        });
-//
-//        binding.layoutSideBarUser.relativeMyAddresses.setOnClickListener(v -> {
-//            Intent intent = new Intent(getActivity(), MyAddressesActivity.class);
-//            startActivity(intent);
-//            Bungee.split(getActivity());
-//        });
-//
-//        binding.layoutSideBarUser.relativeAboutUs.setOnClickListener(v -> {
-//            Intent intent = new Intent(getActivity(), AboutUsActivity.class);
-//            startActivity(intent);
-//            Bungee.split(getActivity());
-//        });
-//
-//        binding.layoutSideBarUser.relativePrivacyPolicy.setOnClickListener(v -> {
-//            Intent intent = new Intent(getActivity(), UsagePolicyActivity.class);
-//            startActivity(intent);
-//            Bungee.split(getActivity());
-//        });
-//
-//        binding.layoutSideBarUser.relativeContactUs.setOnClickListener(v -> {
-//            Intent intent = new Intent(getActivity(), ContactUsActivity.class);
-//            startActivity(intent);
-//            Bungee.split(getActivity());
-//        });
-//        binding.layoutSideBarUser.relativeLogout.setOnClickListener(v -> {
-//            menuListFragmentPresenter.logout(deviceToken);
-//        });
+
+        binding.layoutSideBarUser.relativeSuggestCoupon.setOnClickListener(v -> {
+            Intent intent = new Intent(getActivity(),SuggestCouponActivity.class);
+            startActivity(intent);
+            Bungee.split(getActivity());
+        });
+
+        binding.layoutSideBarUser.relativeHelp.setOnClickListener(v -> {
+            Intent intent = new Intent(getActivity(),ComplaintsActivity.class);
+            startActivity(intent);
+            Bungee.split(getActivity());
+        });
+        binding.layoutSideBarUser.relativeEnglish.setOnClickListener(v -> {
+            ParentClass.storeLang("en",getActivity());
+            Intent intent = new Intent(getActivity(),HomeActivity.class);
+            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+            intent.addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
+            startActivity(intent);
+        });
+        binding.layoutSideBarUser.rlArabic.setOnClickListener(v -> {
+            ParentClass.storeLang("ar",getActivity());
+            Intent intent = new Intent(getActivity(),HomeActivity.class);
+            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+            intent.addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
+            startActivity(intent);
+        });
+        binding.layoutSideBarUser.relativeLogout.setOnClickListener(v -> {
+            menuListFragmentPresenter.logout(deviceToken);
+        });
     }
 
     private void initUi() {
-//        sharedPrefManager = new SharedPrefManager(getContext());
-//        SharedPreferences prefs = getActivity().getSharedPreferences(Constants.mobileToken, MODE_PRIVATE);
-//        if (!prefs.getString("m_token", "").equals("")) {
-//            deviceToken = prefs.getString("m_token", "");
-//        }
-//        menuListFragmentPresenter = new MenuListFragmentPresenter(getActivity(), sharedPrefManager);
-//
-////        menuListFragmentPresenter = new MenuListFragmentPresenter(getActivity(),sharedPrefManager);
-//
-//        if (sharedPrefManager.getUserDate().getImage().equals("")) {
-//            binding.header.ivLogo.setImageResource(R.drawable.splash);
-//        } else {
-//            ParentClass.LoadImageWithPicasso(sharedPrefManager.getUserDate().getImage(), getActivity(), binding.header.ivLogo);
-//        }
-//        binding.header.tvName.setText(sharedPrefManager.getUserDate().getName());
-//
-//
-//        if (sharedPrefManager.getUserDate().getType().equals("client")) {
-//            binding.layoutSideBarUser.relativeWallet.setVisibility(View.VISIBLE);
-//            binding.layoutSideBarUser.relativeMyAddresses.setVisibility(View.VISIBLE);
-//        } else {
-//            binding.layoutSideBarUser.relativeWallet.setVisibility(View.GONE);
-//            binding.layoutSideBarUser.relativeMyAddresses.setVisibility(View.GONE);
-//        }
+        sharedPrefManager = new SharedPrefManager(getContext());
+        SharedPreferences prefs = getActivity().getSharedPreferences(Constants.mobileToken,MODE_PRIVATE);
+        if (!prefs.getString("m_token","").equals("")) {
+            deviceToken = prefs.getString("m_token","");
+        }
+        menuListFragmentPresenter = new MenuListFragmentPresenter(getActivity(),sharedPrefManager);
+        binding.header.tvName.setText(sharedPrefManager.getUserDate().getName());
+        binding.header.tvEmail.setText(sharedPrefManager.getUserDate().getEmail());
 
     }
 

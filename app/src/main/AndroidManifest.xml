@@ -31,7 +31,7 @@
         <activity android:name=".Main.Activities.Complaints.View.ComplaintsActivity" />
         <activity android:name=".Main.Activities.Deals.View.DealsActivity" />
         <activity android:name=".Authentication.Login.View.LoginActivity" />
-        <activity android:name=".Authentication.ForgetPasswordStepThree.ForgetPasswordStepThreeActivity" />
+        <activity android:name=".Authentication.ForgetPasswordStepThree.View.ForgetPasswordStepThreeActivity" />
         <activity android:name=".Authentication.ForgetPasswordStepTwo.View.ForgetPasswordStepTwo" />
         <activity android:name=".Authentication.ForgetPasswordStepOne.View.ForgetPasswordStepOneActivity" />
         <activity android:name=".Authentication.Register.View.RegisterActivity" />

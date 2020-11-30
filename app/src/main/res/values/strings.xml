@@ -70,6 +70,7 @@
     <string name="chooseLanguage">Choose language</string>
     <string name="somethingWentWrong">Somthing went wrong</string>
     <string name="copiedSuccessfully">Copied successfully!</string>
+    <string name="profileUpdatedSuccessfully">Profile updated successfully</string>
     <string name="highestSale">Highest sale</string>
     <string name="A_Z">A-Z</string>
     <string name="Z_A">Z-A</string>

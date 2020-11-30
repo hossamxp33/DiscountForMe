@@ -1,4 +1,6 @@
-package com.headshot.discountforme.Authentication.Register.Repository;
+package com.headshot.discountforme.Main.Activities.Profile.Repository;
+
+import android.util.Log;
 
 import androidx.lifecycle.MutableLiveData;
 
@@ -12,23 +14,21 @@ import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.Disposable;
 import io.reactivex.schedulers.Schedulers;
 
-public class RegisterRepository {
+public class ProfileRepository {
+    private static ProfileRepository profileRepository;
 
-    private static RegisterRepository registerRepository;
-
-    public static RegisterRepository getInstance() {
-        if (registerRepository == null) {
-            registerRepository = new RegisterRepository();
+    public static ProfileRepository getInstance() {
+        if (profileRepository == null) {
+            profileRepository = new ProfileRepository();
         }
-        return registerRepository;
+        return profileRepository;
     }
 
-    public MutableLiveData<UserModel> register(String name,String email,String password,String confirmPassword,String deviceToken,String socialToken) {
+    public MutableLiveData<UserModel> updateProfile(String userName,String email,String UserToken) {
         final MutableLiveData<UserModel> mutableLiveData = new MutableLiveData<>();
+        Log.e("userToken",UserToken);
 
-
-        Observable observable = RetroWeb.getClient().create(MainServices.class).register(name,email,deviceToken,"android",
-                password,confirmPassword,socialToken)
+        Observable observable = RetroWeb.getClient().create(MainServices.class).update_profile(UserToken,userName,email)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread());
         Observer<UserModel> observer = new Observer<UserModel>() {

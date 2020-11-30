@@ -1,8 +1,8 @@
-package com.headshot.discountforme.Authentication.Register.Repository;
+package com.headshot.discountforme.Main.Activities.Complaints.Repository;
 
 import androidx.lifecycle.MutableLiveData;
 
-import com.headshot.discountforme.Model.UserModel.UserModel;
+import com.headshot.discountforme.Model.GeneralResponse.GeneralResponse;
 import com.headshot.discountforme.Network.MainServices;
 import com.headshot.discountforme.Utils.RetroWeb;
 
@@ -12,33 +12,30 @@ import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.Disposable;
 import io.reactivex.schedulers.Schedulers;
 
-public class RegisterRepository {
+public class ComplaintsRepository {
+    private static ComplaintsRepository complaintsRepository;
 
-    private static RegisterRepository registerRepository;
-
-    public static RegisterRepository getInstance() {
-        if (registerRepository == null) {
-            registerRepository = new RegisterRepository();
+    public static ComplaintsRepository getInstance() {
+        if (complaintsRepository == null) {
+            complaintsRepository = new ComplaintsRepository();
         }
-        return registerRepository;
+        return complaintsRepository;
     }
 
-    public MutableLiveData<UserModel> register(String name,String email,String password,String confirmPassword,String deviceToken,String socialToken) {
-        final MutableLiveData<UserModel> mutableLiveData = new MutableLiveData<>();
+    public MutableLiveData<GeneralResponse> sendHelp(String brand,String email,String address,String message,String coupon) {
+        final MutableLiveData<GeneralResponse> mutableLiveData = new MutableLiveData<>();
 
-
-        Observable observable = RetroWeb.getClient().create(MainServices.class).register(name,email,deviceToken,"android",
-                password,confirmPassword,socialToken)
+        Observable observable = RetroWeb.getClient().create(MainServices.class).sendHelp(brand,email,address,message,coupon)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread());
-        Observer<UserModel> observer = new Observer<UserModel>() {
+        Observer<GeneralResponse> observer = new Observer<GeneralResponse>() {
             @Override
             public void onSubscribe(Disposable d) {
 
             }
 
             @Override
-            public void onNext(UserModel userModel) {
+            public void onNext(GeneralResponse userModel) {
                 mutableLiveData.setValue(userModel);
 
             }

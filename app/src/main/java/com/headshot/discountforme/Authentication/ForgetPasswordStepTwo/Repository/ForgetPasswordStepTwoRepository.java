@@ -1,4 +1,4 @@
-package com.headshot.discountforme.Authentication.Register.Repository;
+package com.headshot.discountforme.Authentication.ForgetPasswordStepTwo.Repository;
 
 import androidx.lifecycle.MutableLiveData;
 
@@ -12,23 +12,22 @@ import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.Disposable;
 import io.reactivex.schedulers.Schedulers;
 
-public class RegisterRepository {
+public class ForgetPasswordStepTwoRepository {
 
-    private static RegisterRepository registerRepository;
+    private static ForgetPasswordStepTwoRepository forgetPasswordStepTwoRepository;
 
-    public static RegisterRepository getInstance() {
-        if (registerRepository == null) {
-            registerRepository = new RegisterRepository();
+    public static ForgetPasswordStepTwoRepository getInstance() {
+        if (forgetPasswordStepTwoRepository == null) {
+            forgetPasswordStepTwoRepository = new ForgetPasswordStepTwoRepository();
         }
-        return registerRepository;
+        return forgetPasswordStepTwoRepository;
     }
 
-    public MutableLiveData<UserModel> register(String name,String email,String password,String confirmPassword,String deviceToken,String socialToken) {
+    public MutableLiveData<UserModel> forgetPassword(String email,String code) {
         final MutableLiveData<UserModel> mutableLiveData = new MutableLiveData<>();
 
 
-        Observable observable = RetroWeb.getClient().create(MainServices.class).register(name,email,deviceToken,"android",
-                password,confirmPassword,socialToken)
+        Observable observable = RetroWeb.getClient().create(MainServices.class).checkCode(email,code)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread());
         Observer<UserModel> observer = new Observer<UserModel>() {
@@ -57,4 +56,5 @@ public class RegisterRepository {
 
         return mutableLiveData;
     }
+
 }
