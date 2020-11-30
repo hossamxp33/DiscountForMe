@@ -75,17 +75,24 @@ public class HomeActivity extends ParentClass {
         homeNavBinding = HomeNavBinding.inflate(getLayoutInflater());
         View view = homeNavBinding.getRoot();
         setContentView(view);
+        Log.e("lang", getLang(this));
         if (getLang(this).equals("ar")) {
             homeNavBinding.drawerlayout.setVisibility(View.VISIBLE);
             homeNavBinding.drawerlayout2.setVisibility(View.GONE);
             mDrawer = homeNavBinding.drawerlayout;
+            setupMenu();
         }
         if (getLang(this).equals("en")) {
             homeNavBinding.drawerlayout2.setVisibility(View.VISIBLE);
             homeNavBinding.drawerlayout.setVisibility(View.GONE);
             mDrawer = homeNavBinding.drawerlayout2;
+            setupMenu2();
+
         }
-        setupMenu();
+        Log.e("rf", homeNavBinding.drawerlayout2.getVisibility() + "GOODD");
+        Log.e("rfff", homeNavBinding.drawerlayout.getVisibility() + "GOODD");
+
+//        setupMenu();
         initUi();
         handleDirections();
         initEventDriven();
@@ -94,7 +101,7 @@ public class HomeActivity extends ParentClass {
     }
 
     private void initEventDriven() {
-        Log.e("token", sharedPrefManager.getUserDate().getToken()+"GOOD");
+        Log.e("token", sharedPrefManager.getUserDate().getToken() + "GOOD");
         activityHomeBinding().ivMenu.setOnClickListener(v -> {
             mDrawer.openMenu();
         });
@@ -223,6 +230,16 @@ public class HomeActivity extends ParentClass {
         if (mMenuFragment == null) {
             mMenuFragment = new MenuListFragment();
             fm.beginTransaction().add(R.id.id_container_menu, mMenuFragment).commit();
+        }
+
+    }
+
+    public void setupMenu2() {
+        FragmentManager fm = getSupportFragmentManager();
+        MenuListFragment mMenuFragment = (MenuListFragment) fm.findFragmentById(R.id.id_container_menu2);
+        if (mMenuFragment == null) {
+            mMenuFragment = new MenuListFragment();
+            fm.beginTransaction().add(R.id.id_container_menu2, mMenuFragment).commit();
         }
 
     }
