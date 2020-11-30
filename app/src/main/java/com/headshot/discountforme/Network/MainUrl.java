@@ -4,8 +4,10 @@ public class MainUrl {
     public static final String categories = "categories";
     public static final String register = "register";
     public static final String brands = "brands";
+    public static final String offers_coupons = "offers_coupons";
     public static final String favourite_coupon = "favourite_coupon";
     public static final String login = "login";
+    public static final String offers_sliders = "offers_sliders";
     public static final String coupon_review = "coupon_review";
     public static final String filter = "filter";
     public static final String favourites = "favourites";

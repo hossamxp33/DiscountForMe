@@ -39,13 +39,14 @@ public class HomeViewModel extends ViewModel {
         brandsList = homeRepository.getBrands();
     }
 
+    public LiveData<List<Datum>> getBrandsList() {
+        return brandsList;
+    }
+
     public LiveData<List<Datum>> getCategoriesList() {
         return categoriesList;
     }
 
-    public LiveData<List<Datum>> getBrandsList() {
-        return brandsList;
-    }
 
     public void getHome(String id, String token) {
 

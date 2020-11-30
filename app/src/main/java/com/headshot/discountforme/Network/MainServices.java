@@ -4,6 +4,7 @@ import com.headshot.discountforme.Model.CategoriesModel.CategoriesModel;
 import com.headshot.discountforme.Model.FavouritesModel.FavouritesModel;
 import com.headshot.discountforme.Model.GeneralResponse.GeneralResponse;
 import com.headshot.discountforme.Model.HomeModel.HomeModel;
+import com.headshot.discountforme.Model.SliderModel.SliderModel;
 import com.headshot.discountforme.Model.UserModel.UserModel;
 
 import io.reactivex.Observable;
@@ -18,6 +19,16 @@ import retrofit2.http.Query;
 public interface MainServices {
     @GET(MainUrl.brands)
     Observable<CategoriesModel> brands(
+    );
+
+    @GET(MainUrl.offers_coupons)
+    Observable<HomeModel> offers_coupons(
+            @Query("page") int page
+
+    );
+
+    @GET(MainUrl.offers_sliders)
+    Observable<SliderModel> offers_sliders(
     );
 
     @GET(MainUrl.categories)
