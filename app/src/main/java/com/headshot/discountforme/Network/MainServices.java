@@ -31,6 +31,13 @@ public interface MainServices {
 
     );
 
+    @GET(MainUrl.used_coupons)
+    Observable<FavouritesModel> used_coupons(
+            @Header("Authorization") String Authorization,
+            @Query("page") int page
+
+    );
+
     @FormUrlEncoded
     @POST(MainUrl.register)
     Observable<UserModel> register(

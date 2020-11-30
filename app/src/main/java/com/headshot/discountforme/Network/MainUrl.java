@@ -9,6 +9,7 @@ public class MainUrl {
     public static final String coupon_review = "coupon_review";
     public static final String filter = "filter";
     public static final String favourites = "favourites";
+    public static final String used_coupons = "used_coupons";
     public static final String search = "search";
     public static final String home = "home/{id}";
     public static final String use_coupon = "use_coupon/{id}";
