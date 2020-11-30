@@ -83,15 +83,95 @@
                     android:textColor="@color/black"
                     android:textSize="14sp" />
 
-                <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/rvDeliveryTimes"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                <LinearLayout
+                    android:id="@+id/llLanguage"
+                    android:layout_width="280dp"
+                    android:layout_height="35dp"
                     android:layout_below="@id/tvReceivingTime"
                     android:layout_marginStart="5dp"
                     android:layout_marginTop="5dp"
                     android:layout_marginBottom="5dp"
-                    android:orientation="horizontal" />
+                    android:orientation="horizontal"
+                    android:weightSum="3.1">
+
+                    <RelativeLayout
+                        android:id="@+id/relativeHighestSale"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:background="@drawable/drawable_black_5_radious"
+                        android:gravity="center">
+
+
+                        <TextView
+                            android:id="@+id/tvHighestSale"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:layout_centerVertical="true"
+                            android:text="@string/highestSale"
+                            android:textColor="@color/white"
+                            android:textSize="14sp" />
+
+                    </RelativeLayout>
+
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight=".05" />
+
+                    <RelativeLayout
+                        android:id="@+id/rlAToZ"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:background="@drawable/drawable_grey_5_stroke"
+                        android:gravity="center">
+
+
+                        <TextView
+                            android:id="@+id/tvAToZ"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:layout_centerVertical="true"
+                            android:text="@string/A_Z"
+                            android:textColor="@color/black"
+                            android:textSize="14sp" />
+
+                    </RelativeLayout>
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight=".05" />
+                    <RelativeLayout
+                        android:id="@+id/rlZToA"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:background="@drawable/drawable_grey_5_stroke"
+                        android:gravity="center">
+
+
+                        <TextView
+                            android:id="@+id/tvZToA"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:layout_centerVertical="true"
+                            android:text="@string/Z_A"
+                            android:textColor="@color/black"
+                            android:textSize="14sp" />
+
+                    </RelativeLayout>
+
+
+
+                </LinearLayout>
+
             </RelativeLayout>
 
 

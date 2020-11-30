@@ -1,6 +1,7 @@
 package com.headshot.discountforme.Network;
 
 import com.headshot.discountforme.Model.CategoriesModel.CategoriesModel;
+import com.headshot.discountforme.Model.FavouritesModel.FavouritesModel;
 import com.headshot.discountforme.Model.GeneralResponse.GeneralResponse;
 import com.headshot.discountforme.Model.HomeModel.HomeModel;
 import com.headshot.discountforme.Model.UserModel.UserModel;
@@ -17,6 +18,17 @@ import retrofit2.http.Query;
 public interface MainServices {
     @GET(MainUrl.brands)
     Observable<CategoriesModel> brands(
+    );
+
+    @GET(MainUrl.categories)
+    Observable<CategoriesModel> categories(
+    );
+
+    @GET(MainUrl.favourites)
+    Observable<FavouritesModel> favourites(
+            @Header("Authorization") String Authorization,
+            @Query("page") int page
+
     );
 
     @FormUrlEncoded
@@ -48,6 +60,23 @@ public interface MainServices {
             @Query("page") int page
     );
 
+    @FormUrlEncoded
+    @POST(MainUrl.filter)
+    Observable<HomeModel> filter(
+            @Header("Authorization") String Authorization,
+            @Field("categories") String categories,
+            @Field("order_by") String order_by,
+            @Query("page") int page
+    );
+
+    @FormUrlEncoded
+    @POST(MainUrl.search)
+    Observable<HomeModel> search(
+            @Header("Authorization") String Authorization,
+            @Field("search") String search,
+            @Query("page") int page
+    );
+
     @GET(MainUrl.use_coupon)
     Observable<GeneralResponse> use_coupon(
             @Header("Authorization") String Authorization,
@@ -59,4 +88,11 @@ public interface MainServices {
             @Header("Authorization") String Authorization,
             @Field("coupon_id") String coupon_id,
             @Field("status") String status);
+
+    @FormUrlEncoded
+    @POST(MainUrl.favourite_coupon)
+    Observable<GeneralResponse> favourite_coupon(
+            @Header("Authorization") String Authorization,
+            @Field("coupon_id") String coupon_id
+    );
 }

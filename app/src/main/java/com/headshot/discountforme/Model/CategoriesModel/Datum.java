@@ -6,6 +6,8 @@ import com.google.gson.annotations.SerializedName;
 
 public class Datum {
 
+    boolean selected = false;
+
     @SerializedName("id")
     @Expose
     private int id;
@@ -48,5 +50,13 @@ public class Datum {
 
     public void setImage(String image) {
         this.image = image;
+    }
+
+    public boolean isSelected() {
+        return selected;
+    }
+
+    public void setSelected(boolean selected) {
+        this.selected = selected;
     }
 }

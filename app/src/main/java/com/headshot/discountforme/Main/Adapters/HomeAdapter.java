@@ -235,6 +235,27 @@ public class HomeAdapter extends PagedListAdapter<Datum, HomeAdapter.ViewHolder>
         holder.binding.ivFavourite.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                homeViewModel.favouriteCoupon(String.valueOf(datum.getId()), token).observe((LifecycleOwner) context, new Observer<GeneralResponse>() {
+                    @Override
+                    public void onChanged(GeneralResponse notificationsModel) {
+                        if (notificationsModel != null) {
+                            if (notificationsModel.getValue()) {
+                                if (datum.isFavStatus()) {
+                                    datum.setFavStatus(false);
+                                    holder.binding.ivFavourite.setImageResource(R.mipmap.favourite);
+
+                                } else if (!datum.isFavStatus()) {
+                                    datum.setFavStatus(true);
+                                    holder.binding.ivFavourite.setImageResource(R.mipmap.favourite_full);
+                                }
+                            } else {
+                                ParentClass.makeErrorToast(context, notificationsModel.getMsg());
+                            }
+                        } else {
+                            ParentClass.makeErrorToast(context, context.getString(R.string.somethingWentWrong));
+                        }
+                    }
+                });
 
             }
         });

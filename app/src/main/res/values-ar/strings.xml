@@ -71,6 +71,10 @@
     <string name="somethingWentWrong">حدث خطأ ما</string>
     <string name="lastUsageWas">آخر إستخدام</string>
     <string name="copiedSuccessfully">تم النسخ!</string>
+    <string name="highestSale">اعلي الخصومات</string>
+    <string name="A_Z">أ-ي</string>
+    <string name="Z_A">ي-أ</string>
+    <string name="results">النتائج</string>
 
 
 </resources>

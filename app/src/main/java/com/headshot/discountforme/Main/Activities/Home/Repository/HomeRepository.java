@@ -73,6 +73,48 @@ public class HomeRepository {
 
     }
 
+    public MutableLiveData<List<Datum>> getBrands() {
+        MutableLiveData<List<Datum>> brandsData = new MutableLiveData<>();
+
+        Observable observable = RetroWeb.getClient().create(MainServices.class).categories()
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread());
+        Observer<CategoriesModel> observer = new Observer<CategoriesModel>() {
+            @Override
+            public void onSubscribe(Disposable d) {
+
+            }
+
+            @Override
+            public void onNext(@NotNull CategoriesModel categoriesModel) {
+                if (categoriesModel != null) {
+                    if (categoriesModel.isValue()) {
+                        brandsData.setValue(categoriesModel.getData());
+                    } else {
+                        brandsData.setValue(null);
+                    }
+
+                } else {
+                    brandsData.setValue(null);
+                }
+            }
+
+            @Override
+            public void onError(Throwable t) {
+                brandsData.setValue(null);
+            }
+
+            @Override
+            public void onComplete() {
+
+            }
+        };
+        observable.subscribe(observer);
+        return brandsData;
+
+    }
+
+
     public MutableLiveData<GeneralResponse> useCoupon(String id, String token) {
         MutableLiveData<GeneralResponse> useCouponData = new MutableLiveData<>();
 
@@ -153,6 +195,47 @@ public class HomeRepository {
         observable.subscribe(observer);
         return couponReviewData;
 
+    }
+
+
+    public MutableLiveData<GeneralResponse> favouriteCoupon(String id, String token) {
+        MutableLiveData<GeneralResponse> favouriteCouponData = new MutableLiveData<>();
+
+        Observable observable = RetroWeb.getClient().create(MainServices.class).favourite_coupon(token, id)
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread());
+        Observer<GeneralResponse> observer = new Observer<GeneralResponse>() {
+            @Override
+            public void onSubscribe(Disposable d) {
+
+            }
+
+            @Override
+            public void onNext(@NotNull GeneralResponse categoriesModel) {
+                if (categoriesModel != null) {
+                    if (categoriesModel.getValue()) {
+                        favouriteCouponData.setValue(categoriesModel);
+                    } else {
+                        favouriteCouponData.setValue(categoriesModel);
+                    }
+
+                } else {
+                    favouriteCouponData.setValue(null);
+                }
+            }
+
+            @Override
+            public void onError(Throwable t) {
+                favouriteCouponData.setValue(null);
+            }
+
+            @Override
+            public void onComplete() {
+
+            }
+        };
+        observable.subscribe(observer);
+        return favouriteCouponData;
     }
 
 

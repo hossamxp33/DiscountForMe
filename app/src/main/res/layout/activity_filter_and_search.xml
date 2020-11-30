@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/backgroundColor"
-    tools:context=".Main.Activities.Notification.View.NotificationsActivity">
+    tools:context=".Main.Activities.FilterAndSearch.View.FilterAndSearchActivity">
 
     <RelativeLayout
         android:id="@+id/relativeHeader"
@@ -18,7 +18,7 @@
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"
-            android:text="@string/notifications"
+            android:text="@string/results"
             android:textColor="@color/black"
             android:textSize="18sp"
             android:textStyle="bold" />
@@ -43,45 +43,16 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-            <TextView
-                android:id="@+id/tvDeleteAll"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:layout_marginTop="10dp"
-                android:text="@string/deleteAll"
-                android:textColor="@color/appColor"
-                android:textSize="14sp" />
-
-            <View
-                android:id="@+id/view"
-                android:layout_width="wrap_content"
-                android:layout_height="2dp"
-                android:layout_below="@+id/tvDeleteAll"
-                android:layout_alignStart="@id/tvDeleteAll"
-                android:layout_alignEnd="@+id/tvDeleteAll"
-                android:background="@color/appColor" />
 
             <com.cooltechworks.views.shimmer.ShimmerRecyclerView
                 android:id="@+id/rvNotifications"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_above="@+id/pbPagination"
-                android:layout_below="@+id/view"
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="10dp"
                 android:layout_marginEnd="10dp"
                 android:layout_marginBottom="10dp" />
 
-            <ProgressBar
-                android:id="@+id/pbPagination"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentBottom="true"
-                android:layout_centerHorizontal="true"
-                android:layout_marginTop="20dp"
-                android:layout_marginBottom="10dp"
-                android:visibility="gone" />
         </RelativeLayout>
     </ScrollView>
 

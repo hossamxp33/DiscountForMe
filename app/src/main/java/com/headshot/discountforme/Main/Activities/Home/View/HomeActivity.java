@@ -1,12 +1,20 @@
 package com.headshot.discountforme.Main.Activities.Home.View;
 
 
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.content.res.Configuration;
 import android.os.Bundle;
+import android.os.Handler;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
+import android.widget.EditText;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
+import android.widget.TextView;
 
 
 import androidx.annotation.Nullable;
@@ -18,7 +26,12 @@ import androidx.paging.PagedList;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.android.material.bottomsheet.BottomSheetBehavior;
+import com.google.android.material.bottomsheet.BottomSheetDialog;
+import com.headshot.discountforme.Authentication.Login.View.LoginActivity;
+import com.headshot.discountforme.Main.Activities.FilterAndSearch.View.FilterAndSearchActivity;
 import com.headshot.discountforme.Main.Activities.Home.ViewModel.HomeViewModel;
+import com.headshot.discountforme.Main.Adapters.BrandsAdapter;
 import com.headshot.discountforme.Main.Adapters.CategoriesAdapter;
 import com.headshot.discountforme.Main.Adapters.HomeAdapter;
 import com.headshot.discountforme.Model.CategoriesModel.Datum;
@@ -34,13 +47,25 @@ import com.mxn.soul.flowingdrawer_core.FlowingDrawer;
 import java.util.List;
 import java.util.Locale;
 
+import spencerstudios.com.bungeelib.Bungee;
+
 public class HomeActivity extends ParentClass {
     HomeNavBinding homeNavBinding;
     FlowingDrawer mDrawer;
-
     HomeViewModel homeViewModel;
     CategoriesAdapter categoriesAdapter;
     HomeAdapter homeAdapter;
+    BottomSheetDialog popFilter;
+    RecyclerView rvCategories;
+    RelativeLayout relativeHighestSale;
+    TextView tvHighestSale;
+    RelativeLayout rlAToZ;
+    TextView tvAToZ;
+    RelativeLayout rlZToA;
+    TextView tvZToA;
+    TextView tvSave;
+
+    BrandsAdapter brandsAdapter;
 
 
     @Override
@@ -69,8 +94,24 @@ public class HomeActivity extends ParentClass {
     }
 
     private void initEventDriven() {
+        Log.e("token", sharedPrefManager.getUserDate().getToken()+"GOOD");
         activityHomeBinding().ivMenu.setOnClickListener(v -> {
             mDrawer.openMenu();
+        });
+        activityHomeBinding().ivFilter.setOnClickListener(v -> {
+            popFilter.show();
+        });
+        activityHomeBinding().ivSearch.setOnClickListener(v -> {
+            if (TextUtils.isEmpty(activityHomeBinding().etSearch.getText().toString())) {
+                activityHomeBinding().etSearch.setError(getString(R.string.search));
+            } else {
+                Intent intent = new Intent(HomeActivity.this, FilterAndSearchActivity.class);
+                intent.putExtra("type_go", "search");
+                intent.putExtra("search", activityHomeBinding().etSearch.getText().toString());
+                startActivity(intent);
+                Bungee.split(HomeActivity.this);
+            }
+
         });
     }
 
@@ -115,7 +156,43 @@ public class HomeActivity extends ParentClass {
                 Log.v("size", listBeans.size() + "GOOD");
             }
         });
+//    RecyclerView rvCategories;
+//    RelativeLayout relativeHighestSale;
+//    TextView tvHighestSale;
+//    RelativeLayout rlAToZ;
+//    TextView tvAToZ;
+//    RelativeLayout rlZToA;
+//    TextView tvZToA;
+        popFilter = new BottomSheetDialog(HomeActivity.this, R.style.AppBottomSheetDialogTheme);
+        popFilter.setContentView(R.layout.popup_filter);
+        rvCategories = (RecyclerView) popFilter.findViewById(R.id.rvCategories);
+        relativeHighestSale = (RelativeLayout) popFilter.findViewById(R.id.relativeHighestSale);
+        tvHighestSale = (TextView) popFilter.findViewById(R.id.tvHighestSale);
+        rlAToZ = (RelativeLayout) popFilter.findViewById(R.id.rlAToZ);
+        tvAToZ = (TextView) popFilter.findViewById(R.id.tvAToZ);
+        rlZToA = (RelativeLayout) popFilter.findViewById(R.id.rlZToA);
+        tvZToA = (TextView) popFilter.findViewById(R.id.tvZToA);
+        tvSave = (TextView) popFilter.findViewById(R.id.tvSave);
 
+        homeViewModel.getBrands();
+        homeViewModel.getBrandsList().observe(HomeActivity.this, new Observer<List<Datum>>() {
+            @Override
+            public void onChanged(List<Datum> data) {
+                if (data != null) {
+                    brandsAdapter.addAll(homeViewModel.getBrandsList().getValue());
+                    brandsAdapter.notifyDataSetChanged();
+                    if (data.size() > 0) {
+                        rvCategories.setVisibility(View.VISIBLE);
+                    } else {
+                        rvCategories.setVisibility(View.GONE);
+                    }
+
+                } else {
+                    errorToast(HomeActivity.this, getString(R.string.somethingWentWrong));
+                    rvCategories.setVisibility(View.GONE);
+                }
+            }
+        });
 
         initRecycler();
 
@@ -201,6 +278,16 @@ public class HomeActivity extends ParentClass {
                 new LinearLayoutManager(HomeActivity.this, RecyclerView.VERTICAL, false);
         activityHomeBinding().rvCoupons.setLayoutManager(linearLayoutManager1);
         activityHomeBinding().rvCoupons.setAdapter(homeAdapter);
+
+
+        brandsAdapter = new BrandsAdapter(HomeActivity.this,
+                Constants.beforApiToken +
+                        sharedPrefManager.getUserDate().getToken(), tvSave, relativeHighestSale, tvHighestSale, relativeHighestSale, tvAToZ, rlZToA, tvZToA);
+        LinearLayoutManager linearLayoutManager2 =
+                new LinearLayoutManager(HomeActivity.this, RecyclerView.HORIZONTAL, false);
+        rvCategories.setLayoutManager(linearLayoutManager2);
+        rvCategories.setAdapter(brandsAdapter);
+
 
         categoriesAdapter = new CategoriesAdapter(HomeActivity.this, activityHomeBinding().rvCategories,
                 homeViewModel, Constants.beforApiToken + sharedPrefManager.getUserDate().getToken(), activityHomeBinding().relativeAll, activityHomeBinding().rvCoupons, homeAdapter);

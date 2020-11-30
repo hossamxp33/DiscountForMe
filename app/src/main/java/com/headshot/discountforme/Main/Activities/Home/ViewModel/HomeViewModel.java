@@ -20,6 +20,7 @@ import java.util.List;
 
 public class HomeViewModel extends ViewModel {
     MutableLiveData<List<Datum>> categoriesList;
+    MutableLiveData<List<Datum>> brandsList;
     HomeRepository homeRepository;
 
 
@@ -33,8 +34,17 @@ public class HomeViewModel extends ViewModel {
         categoriesList = homeRepository.getCategories();
     }
 
+    public void getBrands() {
+        homeRepository = HomeRepository.getInstance();
+        brandsList = homeRepository.getBrands();
+    }
+
     public LiveData<List<Datum>> getCategoriesList() {
         return categoriesList;
+    }
+
+    public LiveData<List<Datum>> getBrandsList() {
+        return brandsList;
     }
 
     public void getHome(String id, String token) {
@@ -63,6 +73,11 @@ public class HomeViewModel extends ViewModel {
     public LiveData<GeneralResponse> couponReview(String id, String status, String token) {
         homeRepository = HomeRepository.getInstance();
         return homeRepository.couponReview(id, status, token);
+    }
+
+    public LiveData<GeneralResponse> favouriteCoupon(String id, String token) {
+        homeRepository = HomeRepository.getInstance();
+        return homeRepository.favouriteCoupon(id, token);
     }
 
 }
