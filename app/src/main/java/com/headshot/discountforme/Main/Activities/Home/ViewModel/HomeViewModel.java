@@ -1,7 +1,5 @@
 package com.headshot.discountforme.Main.Activities.Home.ViewModel;
 
-import android.content.Context;
-
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
@@ -9,7 +7,6 @@ import androidx.paging.LivePagedListBuilder;
 import androidx.paging.PageKeyedDataSource;
 import androidx.paging.PagedList;
 
-import com.cooltechworks.views.shimmer.ShimmerRecyclerView;
 import com.headshot.discountforme.Main.Activities.Home.Repository.HomeFactory;
 import com.headshot.discountforme.Main.Activities.Home.Repository.HomeRepository;
 import com.headshot.discountforme.Model.CategoriesModel.Datum;
@@ -48,11 +45,11 @@ public class HomeViewModel extends ViewModel {
     }
 
 
-    public void getHome(String id, String token) {
+    public void getHome(String id,String token,Boolean isLogin) {
 
         liveDataViewLoading = new MutableLiveData<>();
 
-        HomeFactory itemDataSourceFactory = new HomeFactory(id, token);
+        HomeFactory itemDataSourceFactory = new HomeFactory(id,token,isLogin);
         liveDataSource = itemDataSourceFactory.getRestaurantDataSource();
         PagedList.Config pagedListConfig =
                 (new PagedList.Config.Builder())
@@ -62,23 +59,23 @@ public class HomeViewModel extends ViewModel {
         liveDataViewLoading = itemDataSourceFactory.isViewLoading();
 
 
-        itemPagedList = (new LivePagedListBuilder(itemDataSourceFactory, pagedListConfig)).build();
+        itemPagedList = (new LivePagedListBuilder(itemDataSourceFactory,pagedListConfig)).build();
 
     }
 
-    public LiveData<GeneralResponse> useCoupon(String id, String token) {
+    public LiveData<GeneralResponse> useCoupon(String id,String token) {
         homeRepository = HomeRepository.getInstance();
-        return homeRepository.useCoupon(id, token);
+        return homeRepository.useCoupon(id,token);
     }
 
-    public LiveData<GeneralResponse> couponReview(String id, String status, String token) {
+    public LiveData<GeneralResponse> couponReview(String id,String status,String token) {
         homeRepository = HomeRepository.getInstance();
-        return homeRepository.couponReview(id, status, token);
+        return homeRepository.couponReview(id,status,token);
     }
 
-    public LiveData<GeneralResponse> favouriteCoupon(String id, String token) {
+    public LiveData<GeneralResponse> favouriteCoupon(String id,String token) {
         homeRepository = HomeRepository.getInstance();
-        return homeRepository.favouriteCoupon(id, token);
+        return homeRepository.favouriteCoupon(id,token);
     }
 
 }

@@ -34,12 +34,12 @@
     <string name="category">الفئة</string>
     <string name="arrangeBy">الترتيب حسب</string>
     <string name="add">إضافة</string>
-    <string name="deals">الصفقات</string>
+    <string name="deals">أقوي العروض</string>
     <string name="dealDetails">تفاصيل الصفقة</string>
     <string name="favourites">المفضلة</string>
     <string name="notifications">الإشعارات</string>
     <string name="deleteAll">مسح الكل</string>
-    <string name="usedCoupons">الكوبونات المستعملة</string>
+    <string name="usedCoupons">كوبونات مستعملة</string>
     <string name="userName">الإسم بالكامل</string>
     <string name="createAccount">إنشاء حساب</string>
     <string name="alreadyHaveAccount">لديك حساب بالفعل؟</string>
@@ -61,11 +61,11 @@
     <string name="personalSettings">الإعدادات الشخصية</string>
     <string name="saveChanges">حفظ التعديلات</string>
     <string name="currentPassword">كلمة المرور الحالية</string>
-    <string name="suggestCoupon">اقترح كود كوبون</string>
+    <string name="suggestCoupon">اقترح علينا كوبون</string>
     <string name="whatsAppNumber">رقم الواتساب</string>
     <string name="home">الرئيسية</string>
     <string name="rateUs">قيمنا</string>
-    <string name="helpUs">المساعدة</string>
+    <string name="helpUs">قسم المساعدة</string>
     <string name="logout">تسجيل الخروج</string>
     <string name="chooseLanguage">إختر اللغة</string>
     <string name="somethingWentWrong">حدث خطأ ما</string>
@@ -76,6 +76,9 @@
     <string name="Z_A">ي-أ</string>
     <string name="results">النتائج</string>
     <string name="profileUpdatedSuccessfully">تم تحديث البيانات الشخصية بنجاح</string>
-
+    <string name="orderNow">اطلب الآن</string>
+    <string name="copied">تم النسخ</string>
+    <string name="youShouldLoginFirst">يجب تسجيل الدخول أولًا</string>
+    <string name="cancel">إلغاء</string>
 
 </resources>

@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">DiscountForMe</string>
+    <string name="app_name">اخصم لي</string>
     <string name="note">Notes</string>
     <string name="ok">OK</string>
     <string name="need_permissions">You should allow the app to use these permissions to work well</string>
@@ -45,7 +45,7 @@
     <string name="category">Category</string>
     <string name="arrangeBy">Arrange by</string>
     <string name="add">Add</string>
-    <string name="deals">Deals</string>
+    <string name="deals">Best deals</string>
     <string name="dealDetails">Deal details</string>
     <string name="favourites">Favourites</string>
     <string name="notifications">Notifications</string>
@@ -65,15 +65,18 @@
     <string name="whatsAppNumber">WhatsApp number</string>
     <string name="home">Home</string>
     <string name="rateUs">Rate us</string>
-    <string name="helpUs">Help us</string>
+    <string name="helpUs">Help center</string>
     <string name="logout">Logout</string>
     <string name="chooseLanguage">Choose language</string>
-    <string name="somethingWentWrong">Somthing went wrong</string>
+    <string name="somethingWentWrong">Something went wrong</string>
     <string name="copiedSuccessfully">Copied successfully!</string>
     <string name="profileUpdatedSuccessfully">Profile updated successfully</string>
     <string name="highestSale">Highest sale</string>
     <string name="A_Z">A-Z</string>
     <string name="Z_A">Z-A</string>
     <string name="results">Results</string>
-
+    <string name="orderNow">Order now</string>
+    <string name="copied">Copied</string>
+    <string name="youShouldLoginFirst">You should login first</string>
+    <string name="cancel">Cancel</string>
 </resources>

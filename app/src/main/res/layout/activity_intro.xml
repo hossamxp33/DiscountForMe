@@ -31,7 +31,7 @@
         android:layout_marginStart="15dp"
         android:layout_marginTop="20dp"
         android:layout_marginEnd="15dp"
-        android:background="@drawable/drawable_button"
+        android:background="@drawable/drawable_button_big_radios"
         android:gravity="center"
         android:text="@string/next"
         android:textColor="@color/white"

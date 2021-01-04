@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white">
@@ -223,6 +222,7 @@
                     android:src="@mipmap/exit" />
 
                 <TextView
+                    android:id="@+id/tvLogOut"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
@@ -270,7 +270,7 @@
                     android:layout_height="match_parent"
                     android:layout_gravity="center"
                     android:layout_weight=".48"
-                    android:background="@drawable/drable_app_color_5_radious"
+                    android:background="@drawable/drawable_button_big_radios"
                     android:gravity="center">
 
 

@@ -21,11 +21,12 @@ public class FilterAndSSearchViewModel extends ViewModel {
     public LiveData<PageKeyedDataSource<Integer, Datum>> liveDataSource2;
     public LiveData<Boolean> liveDataViewLoading2;
 
-    public void getFilter(String token, String categories, String order_by) {
+
+    public void getFilter(String token,String categories,String order_by,Boolean isLogin) {
 
         liveDataViewLoading = new MutableLiveData<>();
 
-        FilterAndSearchFactory itemDataSourceFactory = new FilterAndSearchFactory(token, categories, order_by);
+        FilterAndSearchFactory itemDataSourceFactory = new FilterAndSearchFactory(token,categories,order_by,isLogin);
         liveDataSource = itemDataSourceFactory.getRestaurantDataSource();
         PagedList.Config pagedListConfig =
                 (new PagedList.Config.Builder())
@@ -35,15 +36,15 @@ public class FilterAndSSearchViewModel extends ViewModel {
         liveDataViewLoading = itemDataSourceFactory.isViewLoading();
 
 
-        itemPagedList = (new LivePagedListBuilder(itemDataSourceFactory, pagedListConfig)).build();
+        itemPagedList = (new LivePagedListBuilder(itemDataSourceFactory,pagedListConfig)).build();
 
     }
 
-    public void getSearch(String token, String search) {
+    public void getSearch(String token,String search,Boolean isLogin) {
 
         liveDataViewLoading2 = new MutableLiveData<>();
 
-        SearchFactory itemDataSourceFactory = new SearchFactory(token, search);
+        SearchFactory itemDataSourceFactory = new SearchFactory(token,search,isLogin);
         liveDataSource2 = itemDataSourceFactory.getRestaurantDataSource();
         PagedList.Config pagedListConfig =
                 (new PagedList.Config.Builder())
@@ -53,7 +54,7 @@ public class FilterAndSSearchViewModel extends ViewModel {
         liveDataViewLoading2 = itemDataSourceFactory.isViewLoading();
 
 
-        itemPagedList2 = (new LivePagedListBuilder(itemDataSourceFactory, pagedListConfig)).build();
+        itemPagedList2 = (new LivePagedListBuilder(itemDataSourceFactory,pagedListConfig)).build();
 
     }
 

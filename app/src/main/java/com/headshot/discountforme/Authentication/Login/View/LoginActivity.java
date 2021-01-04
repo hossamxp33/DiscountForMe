@@ -91,6 +91,12 @@ public class LoginActivity extends ParentClass {
             startActivity(intent);
             Bungee.split(LoginActivity.this);
         });
+
+        binding.tvSkip.setOnClickListener(v -> {
+            Intent intent = new Intent(LoginActivity.this,HomeActivity.class);
+            startActivity(intent);
+            Bungee.split(LoginActivity.this);
+        });
     }
 
     private void login() {

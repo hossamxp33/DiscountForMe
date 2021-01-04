@@ -13,14 +13,16 @@ public class SearchFactory extends DataSource.Factory {
 
     String token, search;
     private LiveData<Boolean> _isViewLoading;
+    boolean isLogin;
 
     public LiveData<Boolean> isViewLoading() {
         return _isViewLoading;
     }
 
-    public SearchFactory(String token, String search) {
+    public SearchFactory(String token,String search,boolean isLogin) {
         this.search = search;
         this.token = token;
+        this.isLogin = isLogin;
         _isViewLoading = new MutableLiveData<>();
     }
 
@@ -30,7 +32,7 @@ public class SearchFactory extends DataSource.Factory {
     @Override
     public DataSource create() {
 
-        SearchDataSource itemDataSource = new SearchDataSource(token, search);
+        SearchDataSource itemDataSource = new SearchDataSource(token,search,isLogin);
         homeDataSource.postValue(itemDataSource);
         _isViewLoading = itemDataSource.isViewLoading();
         return itemDataSource;

@@ -4,14 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/backgroundColor"
+    android:background="@color/white"
     tools:context=".Main.Activities.Deals.View.DealsActivity">
 
     <RelativeLayout
         android:id="@+id/relativeHeader"
         android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:background="@drawable/drawable_white_bottom_round_10">
+        android:layout_height="80dp"
+        android:background="@drawable/drawable_white_with_bottom_shadow">
 
         <TextView
             android:layout_width="wrap_content"

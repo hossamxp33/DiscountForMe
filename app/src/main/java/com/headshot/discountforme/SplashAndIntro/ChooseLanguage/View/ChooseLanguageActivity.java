@@ -31,16 +31,16 @@ public class ChooseLanguageActivity extends ParentClass {
         sharedPrefManager = new SharedPrefManager(ChooseLanguageActivity.this);
         binding.rlArabic.setOnClickListener(v -> {
             type = "arabic";
-            binding.rlArabic.setBackgroundResource(R.drawable.drawable_button_with_red_stroke);
+            binding.rlArabic.setBackgroundResource(R.drawable.drawable_button);
             binding.tvArabic.setTextColor(Color.parseColor("#f01313"));
-            binding.rlEnglish.setBackgroundResource(R.drawable.drawable_button_with_grey_stroke);
+            binding.rlEnglish.setBackgroundResource(R.drawable.drawable_button_with_red_stroke);
             binding.tvEnglish.setTextColor(Color.parseColor("#000000"));
         });
         binding.rlEnglish.setOnClickListener(v -> {
             type = "english";
-            binding.rlEnglish.setBackgroundResource(R.drawable.drawable_button_with_red_stroke);
+            binding.rlEnglish.setBackgroundResource(R.drawable.drawable_button);
             binding.tvEnglish.setTextColor(Color.parseColor("#f01313"));
-            binding.rlArabic.setBackgroundResource(R.drawable.drawable_button_with_grey_stroke);
+            binding.rlArabic.setBackgroundResource(R.drawable.drawable_button_with_red_stroke);
             binding.tvArabic.setTextColor(Color.parseColor("#000000"));
         });
 

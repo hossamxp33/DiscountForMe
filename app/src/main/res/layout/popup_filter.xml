@@ -92,15 +92,15 @@
                     android:layout_marginTop="5dp"
                     android:layout_marginBottom="5dp"
                     android:orientation="horizontal"
-                    android:weightSum="3.1">
+                    android:weightSum="3.3">
 
                     <RelativeLayout
                         android:id="@+id/relativeHighestSale"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_gravity="center"
-                        android:layout_weight="1"
-                        android:background="@drawable/drawable_black_5_radious"
+                        android:layout_weight="1.2"
+                        android:background="@drawable/drawable_button_big_radios"
                         android:gravity="center">
 
 
@@ -108,6 +108,8 @@
                             android:id="@+id/tvHighestSale"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:paddingEnd="5dp"
+                            android:paddingStart="5dp"
                             android:layout_centerHorizontal="true"
                             android:layout_centerVertical="true"
                             android:text="@string/highestSale"
@@ -127,7 +129,7 @@
                         android:layout_height="match_parent"
                         android:layout_gravity="center"
                         android:layout_weight="1"
-                        android:background="@drawable/drawable_grey_5_stroke"
+                        android:background="@drawable/drawaable_red_stroke"
                         android:gravity="center">
 
 
@@ -152,7 +154,7 @@
                         android:layout_height="match_parent"
                         android:layout_gravity="center"
                         android:layout_weight="1"
-                        android:background="@drawable/drawable_grey_5_stroke"
+                        android:background="@drawable/drawaable_red_stroke"
                         android:gravity="center">
 
 
@@ -184,7 +186,7 @@
                 android:layout_marginTop="20dp"
                 android:layout_marginEnd="10dp"
                 android:layout_marginBottom="10dp"
-                android:background="@drawable/drawable_button"
+                android:background="@drawable/drawable_button_big_radios"
                 android:gravity="center"
                 android:text="@string/add"
                 android:textColor="@color/white"

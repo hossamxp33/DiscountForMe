@@ -2,13 +2,13 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="300dp"
+    android:layout_height="wrap_content"
     android:layout_marginTop="10dp"
-    android:background="@drawable/drawaable_white_radious_10">
+    android:background="@drawable/drawable_white_and_shadow">
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content">
 
         <RelativeLayout
             android:id="@+id/relativeOnTop"
@@ -44,29 +44,231 @@
 
                 </com.github.florent37.shapeofview.shapes.CircleView>
 
+
             </RelativeLayout>
+
+            <TextView
+                android:id="@+id/tvDescription"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="5dp"
+                android:layout_toEndOf="@+id/rvCategory"
+                android:maxLines="3"
+                android:text="123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 "
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:visibility="visible" />
+
+            <RelativeLayout
+                android:id="@+id/relativeInfoShownCode"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="5dp"
+                android:layout_toEndOf="@id/rvCategory"
+                android:visibility="gone">
+
+                <TextView
+                    android:id="@+id/tvHowWasYourExperiment"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/howWasYourExperiment"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tvTellUsIfItWorks"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tvHowWasYourExperiment"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/tellUsIfItWorks"
+                    android:textColor="@color/black"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+
+                <RelativeLayout
+                    android:id="@+id/llLanguage"
+                    android:layout_width="wrap_content"
+                    android:layout_height="35dp"
+                    android:layout_below="@id/tvTellUsIfItWorks"
+                    android:layout_marginTop="10dp">
+
+                    <RelativeLayout
+                        android:id="@+id/relativeYes"
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
+                        android:layout_gravity="center"
+                        android:background="@drawable/drawable_white_red_strok_25_radios"
+                        android:gravity="center">
+
+
+                        <TextView
+                            android:id="@+id/tvYes"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:layout_centerVertical="true"
+                            android:text="@string/yes"
+                            android:textColor="@color/appColor"
+                            android:textSize="14sp" />
+
+                    </RelativeLayout>
+
+                    <View
+                        android:id="@+id/view"
+                        android:layout_width="10dp"
+                        android:layout_height="match_parent"
+                        android:layout_toEndOf="@+id/relativeYes" />
+
+                    <RelativeLayout
+                        android:id="@+id/rlNo"
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
+                        android:layout_gravity="center"
+                        android:layout_toEndOf="@+id/view"
+                        android:background="@drawable/drawable_white_red_strok_25_radios"
+                        android:gravity="center">
+
+
+                        <TextView
+                            android:id="@+id/tvNo"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:layout_centerVertical="true"
+                            android:text="@string/no"
+                            android:textColor="@color/black"
+                            android:textSize="14sp" />
+
+                    </RelativeLayout>
+
+
+                </RelativeLayout>
+
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/relativeAfterRate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone">
+
+                <ImageView
+                    android:id="@+id/ivSmile"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="20dp"
+                    android:src="@drawable/smile" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/ivSmile"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/thanks"
+                    android:textColor="@color/black"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rlShareAndLike"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/relativeOnTop"
+            android:layout_marginTop="15dp">
+
+            <RelativeLayout
+                android:id="@+id/relativeInfoHiddenCode"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
+                android:visibility="gone">
+
+
+                <TextView
+                    android:id="@+id/tvNumberOfDownloads"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:text="this coupon was downloaded 1000 times"
+                    android:textColor="@color/black"
+                    android:textSize="14sp"
+                    android:visibility="visible" />
+
+                <TextView
+                    android:id="@+id/tvLastUsage"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tvNumberOfDownloads"
+                    android:layout_marginTop="10dp"
+                    android:text="Last usage since two days"
+                    android:textColor="@color/black"
+                    android:textSize="14sp"
+                    android:visibility="visible" />
+
+
+            </RelativeLayout>
+
+
+            <ImageView
+                android:id="@+id/ivShare"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="10dp"
+                android:src="@mipmap/share" />
+
+            <ImageView
+                android:id="@+id/ivFavourite"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginEnd="10dp"
+                android:layout_toStartOf="@id/ivShare"
+                android:src="@mipmap/favourite" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/relativeOnBottom"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="10dp"
+            android:layout_below="@+id/rlShareAndLike"
+            android:layout_marginBottom="15dp">
 
             <RelativeLayout
                 android:layout_width="100dp"
                 android:layout_height="40dp"
-                android:layout_alignParentEnd="true"
                 android:layout_centerVertical="true"
-                android:layout_marginEnd="10dp">
+                android:layout_marginStart="10dp"
+                android:background="@drawable/drawaable_red_stroke">
 
                 <com.github.florent37.shapeofview.shapes.RoundRectView
                     android:id="@+id/rrvHiddenCode"
                     android:layout_width="100dp"
                     android:layout_height="40dp"
                     android:visibility="visible"
-                    app:shape_roundRect_bottomLeftRadius="5dp"
-                    app:shape_roundRect_bottomRightRadius="5dp"
-                    app:shape_roundRect_topLeftRadius="5dp"
-                    app:shape_roundRect_topRightRadius="5dp">
+                    app:shape_roundRect_bottomLeftRadius="25dp"
+                    app:shape_roundRect_bottomRightRadius="25dp"
+                    app:shape_roundRect_topLeftRadius="25dp"
+                    app:shape_roundRect_topRightRadius="25dp">
 
                     <RelativeLayout
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:background="@drawable/drawaable_red_stroke">
+                        android:layout_height="match_parent">
 
                         <TextView
                             android:id="@+id/tvCodeHidden"
@@ -102,7 +304,7 @@
                     android:id="@+id/relativeShownCode"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:background="@drawable/drawable_dash"
+                    android:background="@drawable/drawaable_red_stroke"
                     android:gravity="center"
                     android:visibility="gone">
 
@@ -131,214 +333,18 @@
 
             </RelativeLayout>
 
-
-        </RelativeLayout>
-
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_above="@+id/relativeOnBottom"
-            android:layout_below="@+id/relativeOnTop">
-
-            <RelativeLayout
-                android:id="@+id/relativeInfoHiddenCode"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginStart="10dp"
-                android:layout_marginTop="5dp"
-                android:layout_marginBottom="5dp"
-                android:visibility="visible">
-
-                <TextView
-                    android:id="@+id/tvDescription"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:maxLines="3"
-                    android:text="123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 "
-                    android:textColor="@color/black"
-                    android:textSize="14sp"
-                    android:textStyle="bold" />
-
-
-                <TextView
-                    android:id="@+id/tvNumberOfDownloads"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/tvDescription"
-                    android:layout_marginTop="20dp"
-                    android:text="this coupon was downloaded 1000 times"
-                    android:textColor="@color/black"
-                    android:textSize="14sp" />
-
-                <TextView
-                    android:id="@+id/tvLastUsage"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/tvNumberOfDownloads"
-                    android:layout_marginTop="10dp"
-                    android:text="Last usage since two days"
-                    android:textColor="@color/black"
-                    android:textSize="14sp" />
-
-
-            </RelativeLayout>
-
-            <RelativeLayout
-                android:id="@+id/relativeInfoShownCode"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginStart="10dp"
-                android:layout_marginTop="5dp"
-                android:layout_marginBottom="5dp"
-                android:visibility="gone">
-
-                <TextView
-                    android:id="@+id/tvHowWasYourExperiment"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/howWasYourExperiment"
-                    android:textColor="@color/black"
-                    android:textSize="16sp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:id="@+id/tvTellUsIfItWorks"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/tvHowWasYourExperiment"
-                    android:layout_marginTop="10dp"
-                    android:text="@string/tellUsIfItWorks"
-                    android:textColor="@color/black"
-                    android:textSize="14sp"
-                    android:textStyle="bold" />
-
-                <LinearLayout
-                    android:id="@+id/llLanguage"
-                    android:layout_width="180dp"
-                    android:layout_height="35dp"
-                    android:layout_below="@id/tvTellUsIfItWorks"
-                    android:layout_marginTop="10dp"
-                    android:weightSum="1">
-
-                    <RelativeLayout
-                        android:id="@+id/relativeYes"
-                        android:layout_width="0dp"
-                        android:layout_height="match_parent"
-                        android:layout_gravity="center"
-                        android:layout_weight=".48"
-                        android:background="@drawable/drawaable_red_stroke"
-                        android:gravity="center">
-
-
-                        <TextView
-                            android:id="@+id/tvYes"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_centerHorizontal="true"
-                            android:layout_centerVertical="true"
-                            android:text="@string/yes"
-                            android:textColor="@color/appColor"
-                            android:textSize="14sp" />
-
-                    </RelativeLayout>
-
-                    <View
-                        android:layout_width="0dp"
-                        android:layout_height="match_parent"
-                        android:layout_weight=".04" />
-
-                    <RelativeLayout
-                        android:id="@+id/rlNo"
-                        android:layout_width="0dp"
-                        android:layout_height="match_parent"
-                        android:layout_gravity="center"
-                        android:layout_weight=".48"
-                        android:background="@drawable/drawable_grey_stroke_5_radious"
-                        android:gravity="center">
-
-
-                        <TextView
-                            android:id="@+id/tvNo"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_centerHorizontal="true"
-                            android:layout_centerVertical="true"
-                            android:text="@string/no"
-                            android:textColor="@color/black"
-                            android:textSize="14sp" />
-
-                    </RelativeLayout>
-
-
-                </LinearLayout>
-
-
-            </RelativeLayout>
-
-            <RelativeLayout
-                android:id="@+id/relativeAfterRate"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:visibility="gone">
-
-                <ImageView
-                    android:id="@+id/ivSmile"
-                    android:layout_width="70dp"
-                    android:layout_height="70dp"
-                    android:layout_centerHorizontal="true"
-                    android:layout_marginTop="20dp"
-                    android:src="@drawable/smile" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/ivSmile"
-                    android:layout_centerHorizontal="true"
-                    android:layout_marginTop="10dp"
-                    android:text="@string/thanks"
-                    android:textColor="@color/black"
-                    android:textSize="14sp"
-                    android:textStyle="bold" />
-
-            </RelativeLayout>
-
-
-        </RelativeLayout>
-
-        <RelativeLayout
-            android:id="@+id/relativeOnBottom"
-            android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:layout_alignParentBottom="true"
-            android:layout_marginBottom="10dp">
-
-
             <TextView
                 android:id="@+id/tvShopNow"
                 android:layout_width="100dp"
                 android:layout_height="match_parent"
-                android:layout_marginStart="10dp"
-                android:background="@drawable/drable_app_color_5_radious"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="10dp"
+                android:background="@drawable/drawable_button_big_radios"
                 android:gravity="center"
-                android:text="@string/shopNow"
+                android:text="@string/orderNow"
                 android:textColor="@color/white"
                 android:textSize="14sp" />
 
-            <ImageView
-                android:id="@+id/ivShare"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:layout_alignParentEnd="true"
-                android:layout_marginEnd="10dp"
-                android:src="@mipmap/share" />
-
-            <ImageView
-                android:id="@+id/ivFavourite"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:layout_marginEnd="10dp"
-                android:layout_toStartOf="@+id/ivShare"
-                android:src="@mipmap/favourite" />
 
         </RelativeLayout>
 

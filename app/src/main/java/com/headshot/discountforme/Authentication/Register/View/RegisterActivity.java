@@ -93,6 +93,12 @@ public class RegisterActivity extends ParentClass {
             Bungee.split(RegisterActivity.this);
         });
 
+        binding.tvSkip.setOnClickListener(v -> {
+            Intent intent = new Intent(RegisterActivity.this,HomeActivity.class);
+            startActivity(intent);
+            Bungee.split(RegisterActivity.this);
+        });
+
     }
 
     private void login() {

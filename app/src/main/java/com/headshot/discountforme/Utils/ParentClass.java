@@ -35,12 +35,14 @@ import android.util.DisplayMetrics;
 import android.util.Log;
 import android.util.Patterns;
 import android.view.Gravity;
+import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.EditText;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
+import android.widget.RelativeLayout;
 import android.widget.Toast;
 
 import androidx.annotation.Nullable;
@@ -53,6 +55,7 @@ import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.headshot.discountforme.Authentication.Login.View.LoginActivity;
 import com.headshot.discountforme.R;
 import com.squareup.picasso.Picasso;
 import com.taishi.flipprogressdialog.FlipProgressDialog;
@@ -66,6 +69,7 @@ import java.util.List;
 import java.util.Locale;
 
 import io.github.inflationx.viewpump.ViewPumpContextWrapper;
+import spencerstudios.com.bungeelib.Bungee;
 
 public class ParentClass extends AppCompatActivity implements MainRequest {
     public static int paginate = 0;
@@ -95,6 +99,9 @@ public class ParentClass extends AppCompatActivity implements MainRequest {
     private static final int REQUEST_LOCATION = 1;
     public static String latitude = "", longitude = "";
 
+    public static Dialog dialogLogin;
+    RelativeLayout rlCancel;
+    RelativeLayout rlLogin;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -115,10 +122,41 @@ public class ParentClass extends AppCompatActivity implements MainRequest {
         sharedPrefManager = new SharedPrefManager(this);
         manager = getSupportFragmentManager();
         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
-
+        initDialog();
 
     }
 
+
+    public void initDialog() {
+        dialogLogin = new Dialog(ParentClass.this);
+        dialogLogin.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        dialogLogin.getWindow().setBackgroundDrawableResource(android.R.color.transparent);
+        dialogLogin.setContentView(R.layout.pop_up_login);
+        WindowManager.LayoutParams lp1 = new WindowManager.LayoutParams();
+        lp1.copyFrom(dialogLogin.getWindow().getAttributes());
+        lp1.width = WindowManager.LayoutParams.MATCH_PARENT;
+        lp1.height = WindowManager.LayoutParams.WRAP_CONTENT;
+        rlCancel = dialogLogin.findViewById(R.id.rlCancel);
+        rlLogin = dialogLogin.findViewById(R.id.rlLogin);
+        rlCancel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dialogLogin.dismiss();
+            }
+        });
+        rlLogin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dialogLogin.dismiss();
+                Intent intent = new Intent(ParentClass.this,LoginActivity.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                intent.addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
+                startActivity(intent);
+                Bungee.split(ParentClass.this);
+            }
+        });
+    }
 
     public static Bitmap resizeImage(Bitmap originalImage,float maxImageSize,
                                      boolean filter) {

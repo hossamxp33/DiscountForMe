@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="250dp"
+    android:layout_height="150dp"
     android:layout_marginTop="10dp"
-    android:background="@drawable/drawaable_white_radious_10">
+    android:background="@drawable/drawable_white_and_shadow">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -12,11 +12,11 @@
         <ImageView
             android:id="@+id/ivUnlike"
             android:layout_width="40dp"
-            android:visibility="gone"
             android:layout_height="40dp"
             android:layout_alignParentEnd="true"
             android:padding="10dp"
-            android:src="@mipmap/cancel" />
+            android:src="@mipmap/cancel"
+            android:visibility="gone" />
 
         <RelativeLayout
             android:id="@+id/relativeTop"
@@ -80,7 +80,8 @@
             android:layout_marginTop="20dp"
             android:text="this coupon was downloaded 1000 times"
             android:textColor="@color/black"
-            android:textSize="14sp" />
+            android:textSize="14sp"
+            android:visibility="gone" />
 
         <TextView
             android:id="@+id/tvLastUsage"
@@ -91,10 +92,11 @@
             android:layout_marginTop="10dp"
             android:text="Last usage since two days"
             android:textColor="@color/black"
-            android:textSize="14sp" />
+            android:textSize="14sp"
+            android:visibility="gone" />
 
         <LinearLayout
-            android:layout_width="180dp"
+            android:layout_width="220dp"
             android:layout_height="35dp"
             android:layout_alignParentBottom="true"
             android:layout_marginStart="10dp"
@@ -107,8 +109,8 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_gravity="center"
-                android:layout_weight=".48"
-                android:background="@drawable/drable_app_color_5_radious"
+                android:layout_weight=".47"
+                android:background="@drawable/drawable_button_big_radios"
                 android:gravity="center">
 
 
@@ -127,15 +129,15 @@
             <View
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight=".04" />
+                android:layout_weight=".06" />
 
             <RelativeLayout
                 android:id="@+id/rlCopyCode"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_gravity="center"
-                android:layout_weight=".48"
-                android:background="@drawable/drawable_grey_stroke_5_radious"
+                android:layout_weight=".47"
+                android:background="@drawable/drawaable_red_stroke"
                 android:gravity="center">
 
 

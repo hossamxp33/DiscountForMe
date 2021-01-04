@@ -14,7 +14,6 @@ import android.view.WindowManager;
 import androidx.appcompat.app.AlertDialog;
 import androidx.core.app.ActivityCompat;
 
-import com.headshot.discountforme.Authentication.Login.View.LoginActivity;
 import com.headshot.discountforme.Main.Activities.Home.View.HomeActivity;
 import com.headshot.discountforme.R;
 import com.headshot.discountforme.SplashAndIntro.Intro.View.IntroActivity;
@@ -80,23 +79,23 @@ public class SplashActivity extends ParentClass {
 
 
                 } else {
-                    if (sharedPrefManager.getLoginStatus()) {
-                        Intent intent = new Intent(SplashActivity.this,HomeActivity.class);
-                        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
-                        intent.addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
-                        startActivity(intent);
-                        Bungee.split(SplashActivity.this);
+//                    if (sharedPrefManager.getLoginStatus()) {
+                    Intent intent = new Intent(SplashActivity.this,HomeActivity.class);
+                    intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                    intent.addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
+                    startActivity(intent);
+                    Bungee.split(SplashActivity.this);
 
 
-                    } else {
-                        Intent intent = new Intent(SplashActivity.this,LoginActivity.class);
-                        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
-                        intent.addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
-                        startActivity(intent);
-                        Bungee.split(SplashActivity.this);
-                    }
+//                    } else {
+//                        Intent intent = new Intent(SplashActivity.this,LoginActivity.class);
+//                        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+//                        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+//                        intent.addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
+//                        startActivity(intent);
+//                        Bungee.split(SplashActivity.this);
+//                    }
                 }
             }
         },3000);

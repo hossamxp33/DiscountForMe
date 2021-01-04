@@ -11,16 +11,19 @@ import com.headshot.discountforme.Model.HomeModel.Datum;
 public class HomeFactory extends DataSource.Factory {
 
 
-    String id,token;
+    String id, token;
+    Boolean isLogin;
+
     private LiveData<Boolean> _isViewLoading;
 
     public LiveData<Boolean> isViewLoading() {
         return _isViewLoading;
     }
 
-    public HomeFactory(String id,String token) {
+    public HomeFactory(String id,String token,Boolean isLogin) {
         this.id = id;
         this.token = token;
+        this.isLogin = isLogin;
         _isViewLoading = new MutableLiveData<>();
     }
 
@@ -30,7 +33,7 @@ public class HomeFactory extends DataSource.Factory {
     @Override
     public DataSource create() {
 
-        HomeDataSource itemDataSource = new HomeDataSource(id,token);
+        HomeDataSource itemDataSource = new HomeDataSource(id,token,isLogin);
         homeDataSource.postValue(itemDataSource);
         _isViewLoading = itemDataSource.isViewLoading();
 

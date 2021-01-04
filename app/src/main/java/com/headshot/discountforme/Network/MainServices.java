@@ -4,8 +4,8 @@ import com.headshot.discountforme.Model.CategoriesModel.CategoriesModel;
 import com.headshot.discountforme.Model.FavouritesModel.FavouritesModel;
 import com.headshot.discountforme.Model.GeneralResponse.GeneralResponse;
 import com.headshot.discountforme.Model.HomeModel.HomeModel;
-import com.headshot.discountforme.Model.SliderModel.SliderModel;
 import com.headshot.discountforme.Model.NotificationModel.NotificationModel;
+import com.headshot.discountforme.Model.SliderModel.SliderModel;
 import com.headshot.discountforme.Model.UserModel.UserModel;
 
 import io.reactivex.Observable;
@@ -80,6 +80,12 @@ public interface MainServices {
             @Query("page") int page
     );
 
+    @GET(MainUrl.home)
+    Observable<HomeModel> homeVisitor(
+            @Path("id") String id,
+            @Query("page") int page
+    );
+
     @FormUrlEncoded
     @POST(MainUrl.filter)
     Observable<HomeModel> filter(
@@ -90,9 +96,24 @@ public interface MainServices {
     );
 
     @FormUrlEncoded
+    @POST(MainUrl.filter)
+    Observable<HomeModel> filterVisitor(
+            @Field("categories") String categories,
+            @Field("order_by") String order_by,
+            @Query("page") int page
+    );
+
+    @FormUrlEncoded
     @POST(MainUrl.search)
     Observable<HomeModel> search(
             @Header("Authorization") String Authorization,
+            @Field("search") String search,
+            @Query("page") int page
+    );
+
+    @FormUrlEncoded
+    @POST(MainUrl.search)
+    Observable<HomeModel> searchVisitor(
             @Field("search") String search,
             @Query("page") int page
     );

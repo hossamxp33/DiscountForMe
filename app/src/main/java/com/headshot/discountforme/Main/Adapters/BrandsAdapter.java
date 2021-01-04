@@ -43,11 +43,11 @@ public class BrandsAdapter extends RecyclerView.Adapter<BrandsAdapter.ViewHolder
     ArrayList<String> items = new ArrayList();
 
 
-    public BrandsAdapter(Context context, String token,
-                         TextView tvFilter, RelativeLayout relativeHighestSale,
+    public BrandsAdapter(Context context,String token,
+                         TextView tvFilter,RelativeLayout relativeHighestSale,
                          TextView tvHighestSale,
-                         RelativeLayout rlAToZ, TextView tvAToZ,
-                         RelativeLayout rlZToA, TextView tvZToA) {
+                         RelativeLayout rlAToZ,TextView tvAToZ,
+                         RelativeLayout rlZToA,TextView tvZToA) {
         this.homeList = new ArrayList<>();
         this.context = context;
         layoutInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
@@ -64,23 +64,23 @@ public class BrandsAdapter extends RecyclerView.Adapter<BrandsAdapter.ViewHolder
 
     @NonNull
     @Override
-    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent,int viewType) {
         return new BrandsAdapter.ViewHolder(ItemCategoryBinding.inflate(LayoutInflater.from(parent.getContext()),
-                parent, false));
+                parent,false));
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull ViewHolder holder,int position) {
         holder.binding.tvCategory.setText(homeList.get(position).getName());
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if (homeList.get(position).isSelected()) {
-                    holder.binding.rlBackground.setBackgroundColor(Color.parseColor("#DDDDDD"));
+                    holder.binding.rlBackground.setBackgroundResource(R.drawable.drawaable_red_stroke);
                     holder.binding.tvCategory.setTextColor(Color.parseColor("#000000"));
                     homeList.get(position).setSelected(false);
                 } else {
-                    holder.binding.rlBackground.setBackgroundColor(Color.parseColor("#000000"));
+                    holder.binding.rlBackground.setBackgroundResource(R.drawable.drawable_button_big_radios);
                     holder.binding.tvCategory.setTextColor(Color.parseColor("#FFFFFF"));
                     homeList.get(position).setSelected(true);
 
@@ -97,13 +97,13 @@ public class BrandsAdapter extends RecyclerView.Adapter<BrandsAdapter.ViewHolder
                         items.add(String.valueOf(homeList.get(i).getId()));
                     }
                 }
-                servicesId = android.text.TextUtils.join(",", items);
+                servicesId = android.text.TextUtils.join(",",items);
 
 
-                Intent intent = new Intent(context, FilterAndSearchActivity.class);
-                intent.putExtra("servicesId", servicesId);
-                intent.putExtra("type", type);
-                intent.putExtra("type_go", "filter");
+                Intent intent = new Intent(context,FilterAndSearchActivity.class);
+                intent.putExtra("servicesId",servicesId);
+                intent.putExtra("type",type);
+                intent.putExtra("type_go","filter");
                 context.startActivity(intent);
                 Bungee.split(context);
 
@@ -114,45 +114,45 @@ public class BrandsAdapter extends RecyclerView.Adapter<BrandsAdapter.ViewHolder
         relativeHighestSale.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (!type.equals("high_discount")) {
+//                if (!type.equals("high_discount")) {
                     type = "high_discount";
-                    relativeHighestSale.setBackgroundResource(R.drawable.drawable_black_5_radious);
-                    rlAToZ.setBackgroundResource(R.drawable.drawable_grey_5_stroke);
-                    rlZToA.setBackgroundResource(R.drawable.drawable_grey_5_stroke);
+                    relativeHighestSale.setBackgroundResource(R.drawable.drawable_button_big_radios);
+                    rlAToZ.setBackgroundResource(R.drawable.drawaable_red_stroke);
+                    rlZToA.setBackgroundResource(R.drawable.drawaable_red_stroke);
                     tvHighestSale.setTextColor(Color.parseColor("#FFFFFF"));
                     tvAToZ.setTextColor(Color.parseColor("#000000"));
                     tvZToA.setTextColor(Color.parseColor("#000000"));
-                }
+//                }
             }
         });
         rlAToZ.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (!type.equals("alpha_asc")) {
+//                if (!type.equals("alpha_asc")) {
                     type = "alpha_asc";
-                    relativeHighestSale.setBackgroundResource(R.drawable.drawable_grey_5_stroke);
-                    rlAToZ.setBackgroundResource(R.drawable.drawable_black_5_radious);
-                    rlZToA.setBackgroundResource(R.drawable.drawable_grey_5_stroke);
+                    relativeHighestSale.setBackgroundResource(R.drawable.drawaable_red_stroke);
+                    rlAToZ.setBackgroundResource(R.drawable.drawable_button_big_radios);
+                    rlZToA.setBackgroundResource(R.drawable.drawaable_red_stroke);
                     tvHighestSale.setTextColor(Color.parseColor("#000000"));
                     tvAToZ.setTextColor(Color.parseColor("#FFFFFF"));
                     tvZToA.setTextColor(Color.parseColor("#000000"));
 
 
-                }
+//                }
             }
         });
         rlZToA.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (!type.equals("alpha_desc")) {
+//                if (!type.equals("alpha_desc")) {
                     type = "alpha_desc";
-                    relativeHighestSale.setBackgroundResource(R.drawable.drawable_grey_5_stroke);
-                    rlAToZ.setBackgroundResource(R.drawable.drawable_grey_5_stroke);
-                    rlZToA.setBackgroundResource(R.drawable.drawable_black_5_radious);
+                    relativeHighestSale.setBackgroundResource(R.drawable.drawaable_red_stroke);
+                    rlAToZ.setBackgroundResource(R.drawable.drawaable_red_stroke);
+                    rlZToA.setBackgroundResource(R.drawable.drawable_button_big_radios);
                     tvHighestSale.setTextColor(Color.parseColor("#000000"));
                     tvAToZ.setTextColor(Color.parseColor("#000000"));
                     tvZToA.setTextColor(Color.parseColor("#FFFFFF"));
-                }
+//                }
             }
         });
 

@@ -12,11 +12,11 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="15dp"
         android:layout_marginTop="20dp"
+        android:padding="10dp"
         android:text="@string/skip"
         android:textColor="@color/black"
         android:textSize="16sp"
-        android:textStyle="bold"
-        android:visibility="gone" />
+        android:textStyle="bold" />
 
     <ScrollView
         android:layout_width="match_parent"
@@ -135,7 +135,7 @@
                 android:layout_marginStart="15dp"
                 android:layout_marginTop="30dp"
                 android:layout_marginEnd="15dp"
-                android:background="@drawable/drawable_button"
+                android:background="@drawable/drawable_button_big_radios"
                 android:gravity="center"
                 android:text="@string/createAccount"
                 android:textColor="@color/white"
