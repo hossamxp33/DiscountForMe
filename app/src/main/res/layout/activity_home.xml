@@ -77,7 +77,7 @@
 
         <RelativeLayout
             android:id="@+id/relativeAll"
-            android:layout_width="wrap_content"
+            android:layout_width="50dp"
             android:layout_height="80dp">
 
             <de.hdodenhof.circleimageview.CircleImageView

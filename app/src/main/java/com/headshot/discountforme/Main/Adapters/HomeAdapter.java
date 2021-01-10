@@ -119,7 +119,12 @@ public class HomeAdapter extends PagedListAdapter<Datum, HomeAdapter.ViewHolder>
                     });
 
                 } else {
-                    dialogLogin.show();
+                    ParentClass.makeSuccessToast(context,context.getString(R.string.copiedSuccessfully));
+                    ClipboardManager clipboard = (ClipboardManager) context.getSystemService(Context.CLIPBOARD_SERVICE);
+                    ClipData clip = ClipData.newPlainText("code",datum.getDiscountCode());
+                    clipboard.setPrimaryClip(clip);
+
+//                    dialogLogin.show();
                 }
 
             }

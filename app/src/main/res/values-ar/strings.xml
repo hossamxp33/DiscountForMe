@@ -34,7 +34,7 @@
     <string name="category">الفئة</string>
     <string name="arrangeBy">الترتيب حسب</string>
     <string name="add">إضافة</string>
-    <string name="deals">أقوي العروض</string>
+    <string name="deals">أقوى العروض</string>
     <string name="dealDetails">تفاصيل الصفقة</string>
     <string name="favourites">المفضلة</string>
     <string name="notifications">الإشعارات</string>
@@ -71,7 +71,7 @@
     <string name="somethingWentWrong">حدث خطأ ما</string>
     <string name="lastUsageWas">آخر إستخدام</string>
     <string name="copiedSuccessfully">تم النسخ!</string>
-    <string name="highestSale">اعلي الخصومات</string>
+    <string name="highestSale">اعلى الخصومات</string>
     <string name="A_Z">أ-ي</string>
     <string name="Z_A">ي-أ</string>
     <string name="results">النتائج</string>

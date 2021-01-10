@@ -1,6 +1,5 @@
 <resources>
-    <string name="app_name">اخصم لي</string>
-    <string name="note">Notes</string>
+    <string name="app_name">اخصم لي</string><string name="note">Notes</string>
     <string name="ok">OK</string>
     <string name="need_permissions">You should allow the app to use these permissions to work well</string>
     <string name="search">Search</string>
