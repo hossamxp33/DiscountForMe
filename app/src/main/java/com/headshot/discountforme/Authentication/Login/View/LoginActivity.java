@@ -121,7 +121,7 @@ public class LoginActivity extends ParentClass {
                             } else {
                                 Log.e("happenedHere","wrong");
                                 dismissFlipDialog();
-                                makeErrorToast(LoginActivity.this,getString(R.string.somethingWentWrong));
+                                makeErrorToast(LoginActivity.this,userModel.getMsg());
                             }
                         } else {
                             dismissFlipDialog();

@@ -124,7 +124,7 @@ public class RegisterActivity extends ParentClass {
                             } else {
                                 Log.e("happenedHere","wrong");
                                 dismissFlipDialog();
-                                makeErrorToast(RegisterActivity.this,getString(R.string.somethingWentWrong));
+                                makeErrorToast(RegisterActivity.this,userModel.getMsg());
                             }
                         } else {
                             dismissFlipDialog();

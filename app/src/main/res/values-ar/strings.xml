@@ -7,7 +7,7 @@
     <string name="letUsSave">يلا نوفر مع اخصم لي</string>
     <string name="next">التالي</string>
     <string name="arabic">العربية</string>
-    <string name="english">الإنجليزية</string>
+    <string name="english">English</string>
     <string name="pleaseChooseLanguage">من فضلك اختر اللغة</string>
     <string name="skip">تخطي</string>
     <string name="login">تسجيل دخول</string>
@@ -80,5 +80,6 @@
     <string name="copied">تم النسخ</string>
     <string name="youShouldLoginFirst">يجب تسجيل الدخول أولًا</string>
     <string name="cancel">إلغاء</string>
+    <string name="addYourComplaints">اشرح مشكلتك</string>
 
 </resources>

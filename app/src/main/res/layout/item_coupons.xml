@@ -36,8 +36,7 @@
                             android:id="@+id/ivCategory"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:padding="10dp"
-                            android:scaleType="centerInside"
+                            android:scaleType="centerCrop"
                             android:src="@mipmap/facebook" />
 
                     </RelativeLayout>
@@ -55,7 +54,6 @@
                 android:layout_marginEnd="5dp"
                 android:layout_toEndOf="@+id/rvCategory"
                 android:maxLines="3"
-                android:text="123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 "
                 android:textColor="@color/black"
                 android:textSize="14sp"
                 android:textStyle="bold"
@@ -223,30 +221,100 @@
 
             </RelativeLayout>
 
-
-            <ImageView
-                android:id="@+id/ivShare"
+            <com.github.florent37.shapeofview.shapes.CircleView
+                android:id="@+id/shapeCircleShare"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:layout_alignParentEnd="true"
                 android:layout_marginEnd="10dp"
-                android:src="@mipmap/share" />
+                android:visibility="visible"
+                app:shape_circle_borderColor="@color/appColor"
+                app:shape_circle_borderWidth="1dp">
 
-            <ImageView
-                android:id="@+id/ivFavourite"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:id="@+id/ivShare"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_centerHorizontal="true"
+                        android:layout_centerVertical="true"
+                        android:padding="10dp"
+                        android:src="@drawable/share" />
+                </RelativeLayout>
+
+            </com.github.florent37.shapeofview.shapes.CircleView>
+
+
+            <RelativeLayout
+                android:id="@+id/rlFavourites"
+                android:layout_width="42dp"
+                android:layout_height="42dp"
                 android:layout_marginEnd="10dp"
-                android:layout_toStartOf="@id/ivShare"
-                android:src="@mipmap/favourite" />
+                android:layout_toStartOf="@id/shapeCircleShare">
+
+                <com.github.florent37.shapeofview.shapes.CircleView
+                    android:id="@+id/shapeCircle"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:visibility="visible"
+                    app:shape_circle_borderColor="@color/appColor"
+                    app:shape_circle_borderWidth="1dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <ImageView
+                            android:id="@+id/ivFavourite"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:layout_centerHorizontal="true"
+                            android:layout_centerVertical="true"
+                            android:padding="10dp"
+                            android:src="@drawable/heart" />
+                    </RelativeLayout>
+
+                </com.github.florent37.shapeofview.shapes.CircleView>
+                <com.github.florent37.shapeofview.shapes.CircleView
+                    android:id="@+id/shapeCircleRed"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:visibility="gone"
+                    app:shape_circle_borderColor="@color/appColor"
+                    app:shape_circle_borderWidth="1dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@color/appColor">
+
+                        <ImageView
+                            android:id="@+id/ivFavouriteWhite"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:layout_centerHorizontal="true"
+                            android:layout_centerVertical="true"
+                            app:tint="@color/white"
+                            android:padding="10dp"
+                            android:src="@drawable/heart" />
+                    </RelativeLayout>
+
+                </com.github.florent37.shapeofview.shapes.CircleView>
+
+            </RelativeLayout>
+
+
         </RelativeLayout>
 
         <RelativeLayout
             android:id="@+id/relativeOnBottom"
             android:layout_width="match_parent"
             android:layout_height="40dp"
-            android:layout_marginTop="10dp"
             android:layout_below="@+id/rlShareAndLike"
+            android:layout_marginTop="10dp"
             android:layout_marginBottom="15dp">
 
             <RelativeLayout

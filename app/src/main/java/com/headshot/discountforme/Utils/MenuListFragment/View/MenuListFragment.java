@@ -6,6 +6,7 @@ import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
@@ -136,11 +137,13 @@ public class MenuListFragment extends Fragment {
 
         });
 
-//        binding.layoutSideBarUser.relativeRateUs.setOnClickListener(v -> {
-//            Intent intent = new Intent(getActivity(),.class);
-//            startActivity(intent);
-//            Bungee.split(getActivity());
-//        });
+        binding.layoutSideBarUser.relativeRateUs.setOnClickListener(v -> {
+            try {
+                mActivity.startActivity(new Intent(Intent.ACTION_VIEW,Uri.parse("https://play.google.com/store/apps/details?id=com.headshot.discountforme")));
+            } catch (android.content.ActivityNotFoundException anfe) {
+                mActivity.startActivity(new Intent(Intent.ACTION_VIEW,Uri.parse("https://play.google.com/store/apps/details?id=com.headshot.discountforme")));
+            }
+        });
 
         binding.layoutSideBarUser.relativeSuggestCoupon.setOnClickListener(v -> {
             Intent intent = new Intent(mActivity,SuggestCouponActivity.class);

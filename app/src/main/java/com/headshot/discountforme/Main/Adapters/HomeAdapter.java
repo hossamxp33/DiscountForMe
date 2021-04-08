@@ -119,6 +119,8 @@ public class HomeAdapter extends PagedListAdapter<Datum, HomeAdapter.ViewHolder>
                     });
 
                 } else {
+                    holder.binding.rrvHiddenCode.setVisibility(View.GONE);
+                    holder.binding.relativeShownCode.setVisibility(View.VISIBLE);
                     ParentClass.makeSuccessToast(context,context.getString(R.string.copiedSuccessfully));
                     ClipboardManager clipboard = (ClipboardManager) context.getSystemService(Context.CLIPBOARD_SERVICE);
                     ClipData clip = ClipData.newPlainText("code",datum.getDiscountCode());
@@ -251,13 +253,15 @@ public class HomeAdapter extends PagedListAdapter<Datum, HomeAdapter.ViewHolder>
             }
         });
         if (datum.isFavStatus()) {
-            holder.binding.ivFavourite.setImageResource(R.mipmap.favourite_fill);
+            holder.binding.shapeCircleRed.setVisibility(View.VISIBLE);
+            holder.binding.shapeCircle.setVisibility(View.GONE);
 
         } else if (!datum.isFavStatus()) {
-            holder.binding.ivFavourite.setImageResource(R.mipmap.favourite);
+            holder.binding.shapeCircleRed.setVisibility(View.GONE);
+            holder.binding.shapeCircle.setVisibility(View.VISIBLE);
 
         }
-        holder.binding.ivFavourite.setOnClickListener(new View.OnClickListener() {
+        holder.binding.rlFavourites.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if (isLogin) {
@@ -268,11 +272,14 @@ public class HomeAdapter extends PagedListAdapter<Datum, HomeAdapter.ViewHolder>
                                 if (notificationsModel.getValue()) {
                                     if (datum.isFavStatus()) {
                                         datum.setFavStatus(false);
-                                        holder.binding.ivFavourite.setImageResource(R.mipmap.favourite);
+                                        holder.binding.shapeCircleRed.setVisibility(View.GONE);
+                                        holder.binding.shapeCircle.setVisibility(View.VISIBLE);
+
 
                                     } else if (!datum.isFavStatus()) {
                                         datum.setFavStatus(true);
-                                        holder.binding.ivFavourite.setImageResource(R.mipmap.favourite_fill);
+                                        holder.binding.shapeCircleRed.setVisibility(View.VISIBLE);
+                                        holder.binding.shapeCircle.setVisibility(View.GONE);
                                     }
                                 } else {
                                     ParentClass.makeErrorToast(context,notificationsModel.getMsg());
@@ -289,6 +296,7 @@ public class HomeAdapter extends PagedListAdapter<Datum, HomeAdapter.ViewHolder>
 
             }
         });
+
 
     }
 

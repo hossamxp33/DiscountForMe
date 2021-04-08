@@ -13,7 +13,7 @@
     <string name="time">time</string>
     <string name="howWasYourExperiment">How was your experiment?</string>
     <string name="tellUsIfItWorks">Tell us if it works</string>
-    <string name="arabic">Arabic</string>
+    <string name="arabic">العربية</string>
     <string name="english">English</string>
     <string name="pleaseChooseLanguage">Please choose language</string>
     <string name="skip">Skip</string>
@@ -78,4 +78,5 @@
     <string name="copied">Copied</string>
     <string name="youShouldLoginFirst">You should login first</string>
     <string name="cancel">Cancel</string>
+    <string name="addYourComplaints">Explain your complaints</string>
 </resources>

@@ -2,15 +2,19 @@ package com.headshot.discountforme.Main.Activities.Home.View;
 
 
 import android.app.Dialog;
+import android.content.Context;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.Gravity;
+import android.view.KeyEvent;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.view.inputmethod.EditorInfo;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
@@ -118,6 +122,28 @@ public class HomeActivity extends ParentClass {
             }
 
         });
+
+        activityHomeBinding().etSearch.setOnEditorActionListener(new TextView.OnEditorActionListener() {
+            @Override
+            public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
+                if (actionId == EditorInfo.IME_ACTION_SEARCH) {
+                    if (TextUtils.isEmpty(activityHomeBinding().etSearch.getText().toString())) {
+                        activityHomeBinding().etSearch.setError("");
+
+                    } else {
+                        Intent intent = new Intent(HomeActivity.this,FilterAndSearchActivity.class);
+                        intent.putExtra("type_go","search");
+                        intent.putExtra("search",activityHomeBinding().etSearch.getText().toString());
+                        startActivity(intent);
+                        Bungee.split(HomeActivity.this);
+                    }
+                    return true;
+                }
+                return false;
+            }
+        });
+
+
     }
 
     private void handleDirections() {
