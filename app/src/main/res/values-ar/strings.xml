@@ -81,5 +81,6 @@
     <string name="youShouldLoginFirst">يجب تسجيل الدخول أولًا</string>
     <string name="cancel">إلغاء</string>
     <string name="addYourComplaints">اشرح مشكلتك</string>
+    <string name="discountCodeIs">كود الخصم هو:</string>
 
 </resources>

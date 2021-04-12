@@ -79,4 +79,5 @@
     <string name="youShouldLoginFirst">You should login first</string>
     <string name="cancel">Cancel</string>
     <string name="addYourComplaints">Explain your complaints</string>
+    <string name="discountCodeIs">Discount code is:</string>
 </resources>

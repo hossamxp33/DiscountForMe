@@ -242,9 +242,10 @@ public class HomeAdapter extends PagedListAdapter<Datum, HomeAdapter.ViewHolder>
                 try {
                     Intent shareIntent = new Intent(Intent.ACTION_SEND);
                     shareIntent.setType("text/plain");
-                    shareIntent.putExtra(Intent.EXTRA_SUBJECT,"إخصملي");
+                    shareIntent.putExtra(Intent.EXTRA_SUBJECT,"اخصم لي");
                     String shareMessage;
-                    shareMessage = datum.getUrl();
+                    shareMessage = datum.getUrl() + "\n\r" + datum.getDescription() + "\n\r" +
+                            context.getString(R.string.discountCodeIs) + " " + datum.getDiscountCode();
                     shareIntent.putExtra(Intent.EXTRA_TEXT,shareMessage);
                     context.startActivity(Intent.createChooser(shareIntent,"choose one"));
                 } catch (Exception e) {

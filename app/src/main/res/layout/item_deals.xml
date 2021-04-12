@@ -27,8 +27,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:padding="10dp"
-                    android:scaleType="centerInside"
-                    android:src="@mipmap/facebook" />
+                    android:scaleType="centerCrop" />
 
             </RelativeLayout>
 
@@ -48,8 +47,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:maxLines="3"
-                android:text="127689697gk8797hgh799679hjghgghkgyj2137631h3g1h3gkg1h23g123b12m3b1m23bb1n2nbn3b123b1m2b"
                 android:textColor="@color/black"
+                android:textDirection="locale"
                 android:textSize="14sp" />
 
             <TextView
@@ -58,8 +57,8 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentBottom="true"
                 android:maxLines="3"
-                android:text="hahahahahahaha"
                 android:textColor="@color/greyDarker"
+                android:textDirection="locale"
                 android:textSize="13sp"
                 android:textStyle="bold" />
 
