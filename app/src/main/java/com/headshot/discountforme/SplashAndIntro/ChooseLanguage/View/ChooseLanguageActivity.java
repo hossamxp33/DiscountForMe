@@ -5,7 +5,7 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 
-import com.headshot.discountforme.Authentication.Login.View.LoginActivity;
+import com.headshot.discountforme.Main.Activities.Home.View.HomeActivity;
 import com.headshot.discountforme.R;
 import com.headshot.discountforme.Utils.ParentClass;
 import com.headshot.discountforme.Utils.SharedPrefManager;
@@ -47,14 +47,14 @@ public class ChooseLanguageActivity extends ParentClass {
         binding.tvEnter.setOnClickListener(v -> {
             if (type.equals("arabic")) {
                 ParentClass.storeLang("ar",ChooseLanguageActivity.this);
-                Intent intent = new Intent(ChooseLanguageActivity.this,LoginActivity.class);
+                Intent intent = new Intent(ChooseLanguageActivity.this,HomeActivity.class);
                 intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
                 intent.addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
                 startActivity(intent);
             } else {
                 ParentClass.storeLang("en",ChooseLanguageActivity.this);
-                Intent intent = new Intent(ChooseLanguageActivity.this,LoginActivity.class);
+                Intent intent = new Intent(ChooseLanguageActivity.this,HomeActivity.class);
                 intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
                 intent.addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
