@@ -1,10 +1,25 @@
 plugins {
     id 'com.android.application'
     id 'com.google.gms.google-services'
-
+    id 'kotlin-android'
+    id "com.github.triplet.play"
 }
 
+apply plugin: 'kotlin-kapt'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: "com.github.triplet.play"
+apply plugin: 'com.google.gms.google-services'
+apply plugin: 'com.google.firebase.crashlytics'
+
 android {
+    signingConfigs {
+        release {
+            storeFile file('/Users/hossamradwan/Desktop/DiscountForMe 2/app/Discount_for_me.jks')
+            storePassword 'ibrahim123456'
+            keyAlias 'key0'
+            keyPassword 'ibrahim123456'
+        }
+    }
     compileSdkVersion 30
     buildToolsVersion "30.0.2"
 
@@ -12,11 +27,13 @@ android {
         applicationId "com.headshot.discountforme"
         minSdkVersion 21
         targetSdkVersion 30
-        versionCode 8
-        versionName "1.7"
+        versionCode 25
+        versionName "1.9.15"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        signingConfig signingConfigs.release
     }
+
     buildFeatures {
         viewBinding true
     }
@@ -24,7 +41,14 @@ android {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
+
         }
+    }
+    play {
+        track.set("production") // internal / alpha / beta / production
+        updatePriority.set(5) // Between 0 and 5
+        serviceAccountCredentials.set(file("key.json"))
     }
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
@@ -33,6 +57,9 @@ android {
 }
 
 dependencies {
+
+    implementation 'com.google.android.play:core:1.10.2'
+    implementation 'com.google.android.play:core-ktx:1.8.1'
 
     def paging_version = "2.1.2"
 
@@ -52,8 +79,7 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
     implementation 'com.github.myinnos:AppFontChanger:1.0'
     implementation 'com.wang.avi:library:2.1.3'
-    implementation 'com.jakewharton:butterknife:10.1.0'
-    annotationProcessor 'com.jakewharton:butterknife-compiler:10.1.0'
+
     implementation 'androidx.cardview:cardview:1.0.0'
     implementation 'de.hdodenhof:circleimageview:2.2.0'
     implementation 'androidx.recyclerview:recyclerview:1.1.0'
@@ -65,10 +91,8 @@ dependencies {
     implementation 'com.github.florent37:ShapeOfView:v1.0.7'
     implementation 'com.daimajia.slider:library:1.1.5@aar'
     implementation 'com.nineoldandroids:library:2.4.0'
-    implementation 'com.google.android.gms:play-services-location:17.1.0'
     implementation 'com.github.darsh2:MultipleImageSelect:v0.0.4'
-    implementation 'com.google.firebase:firebase-messaging:21.0.0'
-    implementation 'com.google.firebase:firebase-core:18.0.0'
+
     implementation 'com.github.onurkagan:ktoast:1.0.2'
     implementation "com.github.skydoves:androidveil:1.0.2"
     implementation 'com.github.sharish:ShimmerRecyclerView:v1.3'
@@ -91,9 +115,8 @@ dependencies {
     implementation 'io.reactivex.rxjava2:rxjava:2.1.9'
     implementation 'com.squareup.retrofit2:adapter-rxjava2:2.7.1'
 
-    implementation 'com.google.firebase:firebase-database:19.5.1'
+
 //    implementation 'com.google.firebase:firebase-auth:17.0.0'
-    implementation 'com.firebase:firebase-client-android:2.5.2'
     implementation 'com.github.zcweng:switch-button:0.0.3@aar'
 
     implementation 'com.github.vedraj360:DesignerToast:0.1.2'
@@ -114,4 +137,12 @@ dependencies {
     // optional - RxJava support
     implementation "androidx.paging:paging-rxjava2:$paging_version"
 
+
+    implementation platform('com.google.firebase:firebase-bom:28.1.0')
+    implementation 'com.google.firebase:firebase-appindexing:20.0.0'
+    implementation 'com.google.firebase:firebase-crashlytics:18.0.1'
+    implementation 'com.google.firebase:firebase-messaging:22.0.0'
+    implementation 'com.google.firebase:firebase-analytics:19.0.2'
+    implementation 'com.google.firebase:firebase-core:19.0.2'
+    implementation 'com.google.firebase:firebase-auth:21.0.1'
 }

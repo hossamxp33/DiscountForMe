@@ -19,7 +19,7 @@ import androidx.core.app.NotificationCompat;
 import androidx.lifecycle.Lifecycle;
 import androidx.lifecycle.LifecycleOwner;
 
-import com.google.firebase.iid.FirebaseInstanceId;
+import com.google.firebase.messaging.FirebaseMessaging;
 import com.google.firebase.messaging.FirebaseMessagingService;
 import com.google.firebase.messaging.RemoteMessage;
 import com.headshot.discountforme.Main.Activities.Home.View.HomeActivity;
@@ -49,8 +49,10 @@ public class MyFcmPushReceiver extends FirebaseMessagingService implements Lifec
 
     @Override
     public void onNewToken(String s) {
+
         super.onNewToken(s);
-        String refreshedToken = FirebaseInstanceId.getInstance().getToken();
+
+        String refreshedToken = String.valueOf(FirebaseMessaging.getInstance().getToken());
         Log.e(TAG,"Refreshed token: " + refreshedToken);
         SharedPreferences sharedPreferences = getSharedPreferences(Constants.mobileToken,MODE_PRIVATE);
         SharedPreferences.Editor edit = sharedPreferences.edit();

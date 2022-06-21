@@ -12,7 +12,6 @@ import androidx.lifecycle.ViewModelProvider;
 
 import com.headshot.discountforme.Main.Activities.Complaints.ViewModel.ComplaintsViewModel;
 import com.headshot.discountforme.Main.Activities.Home.View.HomeActivity;
-import com.headshot.discountforme.Main.Activities.SuggestCoupon.View.SuggestCouponActivity;
 import com.headshot.discountforme.Model.GeneralResponse.GeneralResponse;
 import com.headshot.discountforme.R;
 import com.headshot.discountforme.Utils.ParentClass;
@@ -112,7 +111,7 @@ public class ComplaintsActivity extends ParentClass {
                             if (userModel.getValue()) {
                                 dismissFlipDialog();
                                 Log.e("happenedHere","200");
-                                Intent intent = new Intent(ComplaintsActivity.this,HomeActivity.class);
+                                Intent intent = new Intent(ComplaintsActivity.this, HomeActivity.class);
                                 intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
                                 intent.addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);

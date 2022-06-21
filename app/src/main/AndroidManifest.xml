@@ -16,14 +16,18 @@
         android:name=".AppController"
         android:allowBackup="true"
         android:hardwareAccelerated="false"
-        android:icon="@drawable/logo_app_icon"
+        android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:largeHeap="true"
         android:requestLegacyExternalStorage="true"
-        android:roundIcon="@drawable/logo_app_icon"
+        android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_channel_id"
+            android:value="10001" />
+
         <activity android:name=".Main.Activities.FilterAndSearch.View.FilterAndSearchActivity" />
         <activity android:name=".Main.Activities.SuggestCoupon.View.SuggestCouponActivity" />
         <activity android:name=".Main.Activities.ChangePassword.View.ChangePasswordActivity" />
@@ -38,12 +42,11 @@
         <activity android:name=".Main.Activities.UsedCoupons.View.UsedCouponsActivity" />
         <activity android:name=".Main.Activities.Notification.View.NotificationsActivity" />
         <activity android:name=".Main.Activities.Favourites.View.FavouriteActivity" />
+        <activity android:name=".Main.Activities.Home.View.HomeActivity" />
+
         <activity android:name=".Main.Activities.DealDetails.View.DealDetailsActivity" />
         <activity android:name=".SplashAndIntro.ChooseLanguage.View.ChooseLanguageActivity" />
         <activity android:name=".SplashAndIntro.Intro.View.IntroActivity" />
-        <activity
-            android:name=".Main.Activities.Home.View.HomeActivity"
-            android:screenOrientation="portrait" />
         <activity android:name=".SplashAndIntro.Splash.View.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -52,7 +55,9 @@
             </intent-filter>
         </activity>
 
-        <service android:name=".Utils.MyFcmPushReceiver">
+        <service
+            android:name=".Utils.MyFcmPushReceiver"
+            android:exported="false">
             <intent-filter>
                 <action android:name="com.google.firebase.MESSAGING_EVENT" />
             </intent-filter>

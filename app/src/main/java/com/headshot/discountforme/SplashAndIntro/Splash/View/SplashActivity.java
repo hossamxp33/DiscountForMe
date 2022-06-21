@@ -9,11 +9,14 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.provider.Settings;
+import android.util.Log;
 import android.view.WindowManager;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.core.app.ActivityCompat;
 
+import com.google.android.play.core.appupdate.AppUpdateManagerFactory;
+import com.google.android.play.core.install.model.UpdateAvailability;
 import com.headshot.discountforme.Main.Activities.Home.View.HomeActivity;
 import com.headshot.discountforme.R;
 import com.headshot.discountforme.SplashAndIntro.Intro.View.IntroActivity;
@@ -32,6 +35,7 @@ public class SplashActivity extends ParentClass {
         setContentView(R.layout.activity_splash);
         sharedPrefManager = new SharedPrefManager(this);
         go();
+
     }
 
     private void myCode() {
@@ -81,7 +85,7 @@ public class SplashActivity extends ParentClass {
 
                 } else {
 //                    if (sharedPrefManager.getLoginStatus()) {
-                    Intent intent = new Intent(SplashActivity.this,HomeActivity.class);
+                    Intent intent = new Intent(SplashActivity.this, HomeActivity.class);
                     intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                     intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
                     intent.addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);

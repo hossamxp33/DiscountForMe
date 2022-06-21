@@ -47,7 +47,7 @@ public class ChooseLanguageActivity extends ParentClass {
         binding.tvEnter.setOnClickListener(v -> {
             if (type.equals("arabic")) {
                 ParentClass.storeLang("ar",ChooseLanguageActivity.this);
-                Intent intent = new Intent(ChooseLanguageActivity.this,HomeActivity.class);
+                Intent intent = new Intent(ChooseLanguageActivity.this, HomeActivity.class);
                 intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
                 intent.addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);

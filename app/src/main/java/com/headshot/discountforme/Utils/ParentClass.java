@@ -71,7 +71,7 @@ import java.util.Locale;
 import io.github.inflationx.viewpump.ViewPumpContextWrapper;
 import spencerstudios.com.bungeelib.Bungee;
 
-public class ParentClass extends AppCompatActivity implements MainRequest {
+public abstract class ParentClass extends AppCompatActivity implements MainRequest {
     public static int paginate = 0;
     public static String lat;
     public static String lng;
@@ -174,6 +174,7 @@ public class ParentClass extends AppCompatActivity implements MainRequest {
     /**
      * check network availability
      */
+
     private static boolean isConnected(Context context) {
         ConnectivityManager connectivity = (ConnectivityManager)
                 context.getSystemService(Context.CONNECTIVITY_SERVICE);
@@ -800,8 +801,9 @@ public class ParentClass extends AppCompatActivity implements MainRequest {
         handleException(context,t);
     }
 
-    @Override
     public Context getContext() {
         return this;
     }
+
+
 }

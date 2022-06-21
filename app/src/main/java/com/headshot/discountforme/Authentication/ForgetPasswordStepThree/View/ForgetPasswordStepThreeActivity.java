@@ -12,8 +12,6 @@ import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
 import com.headshot.discountforme.Authentication.ForgetPasswordStepThree.ViewModel.ForgetPasswordStepThreeViewModel;
-import com.headshot.discountforme.Authentication.Login.View.LoginActivity;
-import com.headshot.discountforme.Authentication.Login.ViewModel.LoginViewModel;
 import com.headshot.discountforme.Main.Activities.Home.View.HomeActivity;
 import com.headshot.discountforme.Model.UserModel.UserModel;
 import com.headshot.discountforme.R;
@@ -92,7 +90,7 @@ public class ForgetPasswordStepThreeActivity extends ParentClass {
                                 Log.e("happenedHere","200");
                                 sharedPrefManager.setLoginStatus(true);
                                 sharedPrefManager.setUserDate(userModel.getData());
-                                Intent intent = new Intent(ForgetPasswordStepThreeActivity.this,HomeActivity.class);
+                                Intent intent = new Intent(ForgetPasswordStepThreeActivity.this, HomeActivity.class);
                                 intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
                                 intent.addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);

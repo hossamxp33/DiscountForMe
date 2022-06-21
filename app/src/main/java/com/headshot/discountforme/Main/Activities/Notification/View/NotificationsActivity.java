@@ -106,7 +106,7 @@ public class NotificationsActivity extends ParentClass {
                             if (notificationsModel.isValue()) {
                                 Log.e("happenedHere","200");
                                 dismissFlipDialog();
-                                Intent intent = new Intent(NotificationsActivity.this,HomeActivity.class);
+                                Intent intent = new Intent(NotificationsActivity.this, HomeActivity.class);
                                 intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
                                 intent.addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);

@@ -93,7 +93,7 @@ public class LoginActivity extends ParentClass {
         });
 
         binding.tvSkip.setOnClickListener(v -> {
-            Intent intent = new Intent(LoginActivity.this,HomeActivity.class);
+            Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
             intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
             intent.addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);

@@ -94,7 +94,7 @@ public class RegisterActivity extends ParentClass {
         });
 
         binding.tvSkip.setOnClickListener(v -> {
-            Intent intent = new Intent(RegisterActivity.this,HomeActivity.class);
+            Intent intent = new Intent(RegisterActivity.this, HomeActivity.class);
             startActivity(intent);
             Bungee.split(RegisterActivity.this);
         });

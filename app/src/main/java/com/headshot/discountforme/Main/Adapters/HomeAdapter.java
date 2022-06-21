@@ -38,7 +38,6 @@ public class HomeAdapter extends PagedListAdapter<Datum, HomeAdapter.ViewHolder>
             return listBean.getId() == t1.getId();
         }
 
-
         @SuppressLint("DiffUtilEquals")
         @Override
         public boolean areContentsTheSame(@NonNull Datum listBean,@NonNull Datum t1) {

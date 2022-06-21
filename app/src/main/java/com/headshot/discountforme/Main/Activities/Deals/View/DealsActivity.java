@@ -12,13 +12,10 @@ import android.util.Log;
 import android.view.View;
 
 import com.headshot.discountforme.Main.Activities.Deals.ViewModel.DealsViewModel;
-import com.headshot.discountforme.Main.Activities.Favourites.View.FavouriteActivity;
-import com.headshot.discountforme.Main.Activities.Home.View.HomeActivity;
 import com.headshot.discountforme.Main.Adapters.DealAdapter;
 import com.headshot.discountforme.Main.Adapters.SliderAdapter;
 import com.headshot.discountforme.Model.SliderModel.Datum;
 import com.headshot.discountforme.R;
-import com.headshot.discountforme.Utils.Constants;
 import com.headshot.discountforme.Utils.ParentClass;
 import com.headshot.discountforme.databinding.ActivityDealsBinding;
 
